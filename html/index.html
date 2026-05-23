@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medidor de energía</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+    <script src="/js/script.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="principal">
+        <img src="/img/Lodo-voltix.png" alt="">
+        <h1>Voltix</h1>
+    </div>
+    <div class="contenedor">
+        <div class="menu">
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="activo"><i class="fa-solid fa-chart-line"></i></a></li>
+                    <li> <a href="monitoreo.html"><i class="fa-solid fa-bolt"></i></a></li>
+                    <li><a href="dispositivos.html"><i class="fa-solid fa-microchip"></i></a></li>
+                    <li><a href="estadisticas.html"><i class="fa-solid fa-chart-pie"></i></a>  </li>
+                    <li><a href="usuarios.html"><i class="fa-solid fa-users"></i></a></li>
+                    <li> <a href="alertas.html"> <i class="fa-solid fa-triangle-exclamation"></i></a> </li>
+                    <li><a href="login.html"><i class="fa-solid fa-right-from-bracket"></i></a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="cards">
+
+
+            <div class="card_1">
+                <h2> ⛅ Consumo Hoy</h2>
+                <p> 150 kWh</p>
+                <p>Consumo Bajo</p>
+            </div>
+            <div class="card_2">
+                <canvas id="grafica"></canvas>
+            </div>
+
+            <div class="infos">
+
+                <div class="info">
+                    <h2>⚡ Potencia actual</h2>
+                    <p>245 W</p>
+                    <span>+5% respecto ayer</span>
+                </div>
+
+                <div class="info">
+                    <h2>💰 Costo estimado</h2>
+                    <p>$18.240</p>
+                    <span>Consumo acumulado hoy</span>
+                </div>
+
+                <div class="info">
+                    <h2> Predicción</h2>
+                    <p>312 kWh</p>
+                    <span>Estimado para mañana</span>
+                </div>
+
+                <div class="info">
+                    <h2>🌱 CO₂ evitado hoy</h2>
+                    <p>2.4 kg</p>
+                    <span>Impacto ambiental reducido</span>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+</body>
+
+</html>
