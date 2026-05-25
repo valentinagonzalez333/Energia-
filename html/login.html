@@ -39,7 +39,7 @@
                 <h2 class="titulo-form">Iniciar Sesión</h2>
             </div>
 
-            <form action="panel.html">
+            <form action="" onsubmit="return false;">
                 <div class="campo">
                     <label for="usuario">Usuario</label>
                     <div class="campo-icono-wrap">
@@ -60,7 +60,7 @@
                     </div>
                 </div>
 
-                <button type="submit" class="boton-ingresar"> Ingresar</button>
+                <button type="submit" class="boton-ingresar" onclick="loguear()"> Ingresar</button>
                <div class="volver">
                  <a href="index.html">Volver</a>
                </div>
@@ -70,4 +70,5 @@
     </div>
 
 </body>
+<script src="../js/login.js"></script>
 </html>
