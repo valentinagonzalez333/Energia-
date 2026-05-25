@@ -1,0 +1,356 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+
+    font-family: 'Poppins', sans-serif;
+    width: 100%;
+    min-height: 100vh;
+    color: white;
+    background-image:  linear-gradient(  rgba(0,0,0,0.45), rgba(0,0,0,0.45)  ), url("../img/casa_fondo.png");
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    overflow-x: hidden;
+}
+
+
+
+.encabezado {
+
+    width: 100%;
+    padding: 25px 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    background: rgba(255,255,255,0.05);
+}
+
+.logo {
+
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.menu {
+    display: flex;
+    gap: 35px;
+}
+
+.menu a {
+
+    text-decoration: none;
+    color: white;
+    transition: 0.3s ease;
+}
+
+.menu a:hover {
+    color: #ffb347;
+}
+
+.boton-login {
+    text-decoration: none;
+    padding: 14px 28px;
+    border-radius: 18px;
+    background: linear-gradient(   135deg,   #ff8c00,   #ffb347 );
+    color: white;
+    box-shadow:0 8px 25px rgba(255,140,0,0.35);
+    transition: 0.3s ease;
+}
+
+.boton-login:hover {
+    transform: translateY(-4px);
+}
+
+
+
+.inicio {
+
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-left: 90px;
+}
+
+.contenido-inicio {
+
+    width: 700px;
+    animation: aparecer 1s ease;
+}
+
+.contenido-inicio h1 {
+
+    font-size: 4.5rem;
+    line-height: 1.1;
+    margin-bottom: 25px;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.contenido-inicio p {
+
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: rgba(255,255,255,0.82);
+    margin-bottom: 35px;
+}
+
+
+.botones {
+    display: flex;
+    gap: 20px;
+}
+
+.boton-principal,
+.boton-secundario {
+
+    text-decoration: none;
+    padding: 18px 32px;
+    border-radius: 22px;
+    transition: 0.3s ease;
+}
+
+.boton-principal {
+    background: linear-gradient(   135deg,   #ff8c00,#ffb347 );
+    color: white;
+    box-shadow: 0 8px 25px rgba(255,140,0,0.35);
+}
+
+.boton-principal:hover {
+    transform: translateY(-4px);
+}
+
+.boton-secundario {
+
+    background: rgba(255,255,255,0.10);
+    border: 1px solid rgba(255,255,255,0.18);
+    backdrop-filter: blur(10px);
+    color: white;
+}
+
+.boton-secundario:hover {
+    background: rgba(255,255,255,0.18);
+}
+
+
+
+.funciones {
+
+    width: 100%;
+    padding: 120px 70px;
+}
+
+.funciones h2 {
+
+    font-size: 3rem;
+    margin-bottom: 50px;
+    text-align: center;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.contenedor-cards {
+
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.card {
+
+    width: 270px;
+    padding: 35px;
+    border-radius: 32px;
+    background: rgba(255,255,255,0.12);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255,255,255,0.18);
+    box-shadow:   0 8px 25px rgba(0,0,0,0.12);
+    transition: 0.3s ease;
+    animation: flotar 1s ease;
+}
+
+.card:hover {
+
+    transform: translateY(-8px);
+    background: rgba(255,255,255,0.18);
+}
+
+.card h3 {
+
+    margin-bottom: 20px;
+    color: #ffb347;
+}
+
+.card p {
+
+    color: rgba(255,255,255,0.82);
+    line-height: 1.7;
+}
+
+
+.estadisticas {
+
+    width: 100%;
+    padding: 120px 70px;
+}
+
+.contenido-estadisticas {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.texto-estadisticas {
+
+    width: 500px;
+}
+
+.texto-estadisticas h2 {
+
+    font-size: 3rem;
+    margin-bottom: 25px;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.texto-estadisticas p {
+
+    line-height: 1.8;
+    color: rgba(255,255,255,0.82);
+}
+
+.panel-estadisticas {
+
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.mini-card {
+
+    width: 180px;
+    padding: 30px;
+    border-radius: 28px;
+    background: rgba(255,255,255,0.12);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255,255,255,0.18);
+    text-align: center;
+}
+
+.mini-card span {
+
+    color: #ffb347;
+}
+
+.mini-card h3 {
+
+    margin-top: 15px;
+    font-size: 2rem;
+}
+
+
+.ia {
+
+    width: 100%;
+    padding: 120px 70px;
+}
+
+.contenido-ia {
+
+    text-align: center;
+}
+
+.contenido-ia h2 {
+
+    font-size: 3rem;
+    margin-bottom: 25px;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.contenido-ia p {
+
+    color: rgba(255,255,255,0.82);
+    margin-bottom: 40px;
+}
+
+.card-ia {
+
+    width: 400px;
+    margin: auto;
+    padding: 45px;
+    border-radius: 35px;
+    background: rgba(255,255,255,0.12);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255,255,255,0.18);
+    box-shadow:
+        0 8px 25px rgba(0,0,0,0.12);
+}
+
+.card-ia h1 {
+
+    margin-top: 20px;
+    font-size: 4rem;
+    color: #ffb347;
+}
+
+
+
+.footer {
+
+    width: 100%;
+    padding: 35px;
+    text-align: center;
+    background: rgba(0,0,0,0.18);
+    backdrop-filter: blur(10px);
+}
+
+
+
+@keyframes aparecer {
+
+    from {
+
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes flotar {
+
+    from {
+
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+
+        filter: blur(10px);
+    }
+
+    to {
+
+        opacity: 1;
+        transform: translateY(0) scale(1);
+
+        filter: blur(0);
+    }
+}

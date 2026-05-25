@@ -203,6 +203,34 @@ body {
 }
 
 
+.volver {
+    display: flex;
+    justify-content:center;
+    margin-top: 10px;
+}
+
+.volver a {
+    font-size: 14px;
+    color: #e47710;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.volver a:hover {
+    text-decoration: underline;
+}
+
+.registrar a{
+     font-size: 14px;
+    color: #e47710;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.olvidaste a:hover {
+    text-decoration: underline;
+}
+
 .boton-ingresar {
     width: 100%;
     padding: 13px;

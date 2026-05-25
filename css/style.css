@@ -43,13 +43,15 @@ body {
     margin-top: 28px;
 }
 
+
+
 .menu {
     display: flex;
     margin-top: 10px;
     margin-left: 30px;
+    margin-right: 30px;
 }
 
-/*  enlaces del menu */
 .menu a {
     align-items: center;
     justify-content: center;
@@ -113,100 +115,148 @@ body {
     transition: color 0.3s ease;
 }
 
-
-
 .cards {
-    width: 100%;
+    flex: 1;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    gap: 40px;
-    padding-right: 20px;
+    gap: 16px;
+    padding: 16px 20px 16px 0;
 }
 
+
+
 .card_1 {
-    padding: 20px;
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 20px 28px;
     border-radius: 20px;
-    color: white;
-    font-family: poppins, sans-serif;
+    font-family: 'Poppins', sans-serif;
     margin-right: 280px;
-    box-shadow: 0 8px 32px rgba(222, 100, 7, 0.15);
+}
+
+.card_1 h2 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+    margin: 0 0 8px;
 }
 
 .card_1 p {
-    font-family: poppins, sans-serif;
-    font-size: 18px;
+    font-size: 22px;
     font-weight: 700;
     color: #ffffff;
-    margin: 10px 0;
+    margin: 6px 0 0;
     text-shadow:
         0 0 10px rgba(242, 241, 239, 0.7),
         0 0 20px rgba(255, 140, 0, 0.4);
 }
 
-.card_2 {
-    padding: 20px;
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 20px;
-    color: white;
-    font-family: poppins, sans-serif;
-    margin-right: 20px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+.card_1 .sub {
+    font-size: 14px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.75);
+    margin-top: 4px;
 }
 
+
+
+.card_2 {
+    padding: 16px 20px;
+    border-radius: 20px;
+    font-family: 'Poppins', sans-serif;
+    margin-right: 20px;
+    width: 420px;
+}
+
+
+
 .infos {
-    width: 100%;
-    align-self: center;
     display: flex;
-    justify-content: center;
-    align-items: center;
-
-    gap: 30px;
-
-    margin-top: 40px;
+    justify-content: flex-end;
+    align-items: stretch;
+    gap: 16px;
+    margin-right: 20px;
+    width: auto;
 }
 
 .info {
-    width: 240px;
-    padding: 10px;
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    width: 200px;
+    padding: 16px 18px;
     border-radius: 20px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
-    color: white;
     font-family: 'Poppins', sans-serif;
-    transition: 0.3s ease;
-}
-
-.info:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 0 20px rgba(255, 140, 0, 0.25);
+    color: white;
 }
 
 .info h2 {
-    font-size: 18px;
-    margin-bottom: 4px;
+    font-size: 14px;
+    font-weight: 600;
     color: #f8fafc;
+    margin: 0 0 6px;
 }
 
 .info p {
-    font-size: 16px;
+    font-size: 22px;
     font-weight: 700;
-    font-family: 'Poppins', sans-serif;
-    margin: 10px 0;
+    margin: 4px 0;
     color: #ffffff;
-    text-shadow:
-        0 0 10px rgba(255, 140, 0, 0.35);
+    text-shadow: 0 0 10px rgba(255, 140, 0, 0.35);
 }
 
 .info span {
-    font-size: 12px;
-
-    color: rgba(255, 255, 255, 0.7);
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.65);
 }
+
+
+
+.card_1,
+.card_2,
+.info {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+}
+
+
+
+.card_1:hover,
+.card_2:hover,
+.info:hover {
+    transform: translateY(-4px);
+    box-shadow:
+        0 12px 38px rgba(0, 0, 0, 0.14),
+        0 0 18px rgba(255, 170, 0, 0.12);
+    background: rgba(255, 255, 255, 0.22);
+}
+
+
+
+@keyframes floatIn {
+    from {
+        opacity: 0;
+        transform: translateY(40px) scale(0.92);
+        filter: blur(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        filter: blur(0);
+    }
+}
+
+.card_1,
+.card_2,
+.info {
+    animation: floatIn 0.8s ease forwards;
+    opacity: 0;
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease;
+}
+
+.card_1            { animation-delay: 0.1s; }
+.card_2            { animation-delay: 0.3s; }
+.info:nth-child(1) { animation-delay: 0.5s; }
+.info:nth-child(2) { animation-delay: 0.65s; }

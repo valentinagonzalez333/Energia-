@@ -1,82 +1,130 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Medidor de energía</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
-    <script src="../js/script.js" defer></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Voltix</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/css/index.css">
 </head>
 
 <body>
 
-    <div class="principal">
-        <img src="../img/Lodo-voltix.png" alt="">
-        <h1>Voltix</h1>
-    </div>
-    <div class="contenedor">
-        <div class="menu">
-            <nav>
-                <ul>
-                    <li><a href="index.html" class="activo"><i class="fa-solid fa-chart-line"></i></a></li>
-                    <li> <a href="monitoreo.html"><i class="fa-solid fa-bolt"></i></a></li>
-                    <li><a href="dispositivos.html"><i class="fa-solid fa-microchip"></i></a></li>
-                    <li><a href="estadisticas.html"><i class="fa-solid fa-chart-pie"></i></a>  </li>
-                    <li><a href="usuarios.html"><i class="fa-solid fa-users"></i></a></li>
-                    <li> <a href="alertas.html"> <i class="fa-solid fa-triangle-exclamation"></i></a> </li>
-                    <li><a href="login.html"><i class="fa-solid fa-right-from-bracket"></i></a></li>
-                </ul>
-            </nav>
+    <header class="encabezado">
+
+        <div class="logo"> ⚡ VOLTIX </div>
+
+        <nav class="menu">
+            <a href="#inicio">Inicio</a>
+            <a href="#funciones">Funciones</a>
+            <a href="#estadisticas">Estadísticas</a>
+            <a href="#ia">IA</a>
+        </nav>
+
+        <a href="login.html" class="boton-login"> Iniciar Sesión </a>
+    </header>
+
+
+
+    <section class="inicio" id="inicio">
+
+        <div class="contenido-inicio">
+            <h1>Monitoreo Energético Inteligente </h1>
+
+            <p>
+                Visualiza el consumo energético de tu hogar mediante gráficas,
+                estadísticas, alertas inteligentes y predicciones automáticas.
+            </p>
+
+            <div class="botones">
+                <a href="login.html" class="boton-principal"> Entrar al sistema </a>
+                <a href="#funciones" class="boton-secundario"> Explorar</a>
+            </div>
         </div>
 
-        <div class="cards">
+    </section>
 
 
-            <div class="card_1">
-                <h2> ⛅ Consumo Hoy</h2>
-                <p> 150 kWh</p>
-                <p>Consumo Bajo</p>
-            </div>
-            <div class="card_2">
-                <canvas id="grafica"></canvas>
-            </div>
+    <section class="funciones" id="funciones">
 
-            <div class="infos">
+        <h2>Funciones del sistema </h2>
 
-                <div class="info">
-                    <h2>⚡ Potencia actual</h2>
-                    <p>245 W</p>
-                    <span>+5% respecto ayer</span>
-                </div>
+        <div class="contenedor-cards">
 
-                <div class="info">
-                    <h2>💰 Costo estimado</h2>
-                    <p>$18.240</p>
-                    <span>Consumo acumulado hoy</span>
-                </div>
-
-                <div class="info">
-                    <h2> Predicción</h2>
-                    <p>312 kWh</p>
-                    <span>Estimado para mañana</span>
-                </div>
-
-                <div class="info">
-                    <h2>🌱 CO₂ evitado hoy</h2>
-                    <p>2.4 kg</p>
-                    <span>Impacto ambiental reducido</span>
-                </div>
-
+            <div class="card">
+                <h3>⚡ Potencia</h3>
+                <p> Visualiza la potencia energética del hogar en tiempo real. </p>
             </div>
 
+            <div class="card">
+                <h3>📈 Consumo</h3>
+                <p>Analiza el comportamiento energético de los últimos días. </p>
+            </div>
+
+            <div class="card">
+                <h3>💰 Costos</h3>
+                <p>Calcula el costo estimado del consumo energético.</p>
+            </div>
+
+            <div class="card">
+                <h3>🚨 Alertas</h3>
+                <p>Detecta anomalías y consumos elevados automáticamente.  </p>
+            </div>
         </div>
-    </div>
+    </section>
 
+    <section class="estadisticas" id="estadisticas">
+
+        <div class="contenido-estadisticas">
+
+            <div class="texto-estadisticas">
+                <h2>Estadísticas inteligentes</h2>
+                <p> El sistema analiza el consumo energético de los últimos
+                    7 y 30 días mediante gráficas dinámicas y monitoreo constante. </p>
+
+            </div>
+
+            <div class="panel-estadisticas">
+
+                <div class="mini-card">
+                    <span>⚡ Consumo Hoy</span>
+                    <h3>48 kWh</h3>
+                </div>
+
+                <div class="mini-card">
+                    <span>📊 Promedio</span>
+                    <h3>41 kWh</h3>
+                </div>
+
+                <div class="mini-card">
+                    <span>💰 Costo</span>
+                    <h3>$800</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="ia" id="ia">
+        <div class="contenido-ia">
+            <h2>Agente IA Predictivo </h2>
+            <p>El sistema utiliza inteligencia artificial para estimar el
+                consumo futuro y detectar patrones energéticos automáticamente. </p>
+
+            <div class="card-ia">
+                <h3>Predicción para mañana </h3>
+                <p> Consumo estimado:</p>
+                <h1> 52 kWh </h1>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+         <p>Voltix • Sistema Inteligente de Monitoreo Energético  </p> 
+    </footer>
 
 </body>
-
 </html>

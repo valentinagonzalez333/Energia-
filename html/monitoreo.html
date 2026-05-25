@@ -17,90 +17,72 @@
         <img src="../img/Lodo-voltix.png" alt="">
         <h1>Voltix</h1>
     </div>
+
     <div class="contenedor">
+
         <div class="menu">
             <nav>
                 <ul>
-                    <li><a href="index.html"><i class="fa-solid fa-chart-line"></i></a></li>
-                    <li> <a href="monitoreo.html" class="activo"><i class="fa-solid fa-bolt"></i></a></li>
-                    <li><a href="dispositivos.html"><i class="fa-solid fa-microchip"></i></a></li>
-                    <li><a href="estadisticas.html"><i class="fa-solid fa-chart-pie"></i></a> </li>
+                    <li><a href="panel.html"><i class="fa-solid fa-chart-line"></i></a></li>
+                    <li><a href="monitoreo.html" class="activo"><i class="fa-solid fa-bolt"></i></a></li>
+                    <li><a href="estadisticas.html"><i class="fa-solid fa-chart-pie"></i></a></li>
                     <li><a href="usuarios.html"><i class="fa-solid fa-users"></i></a></li>
-                    <li> <a href="alertas.html"> <i class="fa-solid fa-triangle-exclamation"></i></a> </li>
+                    <li><a href="alertas.html"><i class="fa-solid fa-triangle-exclamation"></i></a></li>
                     <li><a href="login.html"><i class="fa-solid fa-right-from-bracket"></i></a></li>
                 </ul>
             </nav>
-    </div>
-       <div class="cards">
-    <div class="columna-izquierda">
-        <div class="fila-cards">
-            <div class="card">
-                <h2>Potencia Actual</h2>
-                <h3>0.06</h3>
-                <p>kW</p>
-            </div>
-            <div class="card">
-                <h2>Consumo Hoy</h2>
-                <h3>0.002</h3>
-                <p>kWh</p>
-            </div>
-            <div class="card">
-                <h2>Factor Potencia</h2>
-                <h3>0.880</h3>
-            </div>
-            <div class="card">
-                <h2>Desviación Estandar</h2>
-                <h3>0</h3>
-                <p>KW</p>
-            </div>
         </div>
 
-        <div class="seccion-grafica">
-            <canvas id="graficaConsumo"></canvas>
+        <div class="cards">
+
+            <div class="columna-izquierda">
+                <div class="fila-cards">
+                    <div class="card glass">
+                        <h2>Potencia Actual</h2>
+                        <h3>0.06</h3>
+                        <p>kW</p>
+                    </div>
+                    <div class="card glass card-1">
+                        <h2>Consumo Hoy</h2>
+                        <h3>0.002</h3>
+                        <p>kWh</p>
+                    </div>
+                    <div class="card glass">
+                        <h2>Factor Potencia</h2>
+                        <h3>0.880</h3>
+                        <p>88%</p>
+                    </div>
+                    <div class="card glass">
+                        <h2>Desviación Estándar</h2>
+                        <h3>0</h3>
+                        <p>kW</p>
+                    </div>
+                </div>
+
+                <div class="seccion-grafica glass">
+                    <h3>Consumo por hora</h3>
+                    <canvas id="graficaConsumo"></canvas>
+                </div>
+            </div>
+
+            <div class="columna-centro"></div>
+
+            <div class="cards-right">
+                <div class="right glass">
+                    <h2>Costo</h2>
+                    <p>Aproximado</p>
+                    <h3>$1,70</h3>
+                    <p>COP</p>
+                </div>
+                <div class="right_2 glass">
+                    <h2>Promedio</h2>
+                    <p>0 kW</p>
+                </div>
+            </div>
+
         </div>
+
     </div>
 
-    <div class="cards-right">
-        <div class="right">
-            <h2>Promedio</h2>
-            <h3>0</h3>
-            <p>Kw</p>
-        </div>
-        <div class="right_2">
-            <h2>Costo</h2>
-            <h3>$1,70</h3>
-            <p>COP</p>
-        </div>
-        <div class="right_2">
-            <h2>Voltaje</h2>
-            <h3>120</h3>
-            <p>V</p>
-        </div>
-    </div>
-</div>
-    </div>
 </body>
-
-</html>
-
-    <div class="cards-right">
-        <div class="right">
-            <h2>Promedio</h2>
-            <h3>0</h3>
-            <p>Kw</p>
-        </div>
-        <div class="right_2">
-            <h2>Costo</h2>
-            <h3>$1,70</h3>
-            <p>COP</p>
-        </div>
-        <div class="right_2">
-            <h2>Voltaje</h2>
-            <h3>120</h3>
-            <p>V</p>
-        </div>
-    </div>
-</div>
-</body>
-
 </html>
