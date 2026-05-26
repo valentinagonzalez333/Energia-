@@ -2,8 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Usuarios</title>
+    <script src="../js/script.js" defer></script>
     <link rel="stylesheet" href="../css/usuarios.css" />
     <link
       rel="stylesheet"
@@ -19,15 +21,51 @@
       <div class="menu">
         <nav>
           <ul>
-            <li><a href="panel.html"><i class="fa-solid fa-chart-line"></i></a></li>
-                    <li> <a href="monitoreo.html"><i class="fa-solid fa-bolt"></i></a></li>
-                    <li><a href="estadisticas.html"><i class="fa-solid fa-chart-pie"></i></a>  </li>
-                    <li><a href="usuarios.html" class="activo"><i class="fa-solid fa-users"></i></a></li>
-                    <li> <a href="alertas.html"> <i class="fa-solid fa-triangle-exclamation"></i></a> </li>
-                    <li><a href="login.html"><i class="fa-solid fa-right-from-bracket"></i></a></li>
+            <li>
+              <a href="panel.html"><i class="fa-solid fa-chart-line"></i></a>
+            </li>
+            <li>
+              <a href="monitoreo.html"><i class="fa-solid fa-bolt"></i></a>
+            </li>
+            <li>
+              <a href="estadisticas.html"
+                ><i class="fa-solid fa-chart-pie"></i
+              ></a>
+            </li>
+            <li>
+              <a href="usuarios.html" class="activo"
+                ><i class="fa-solid fa-users"></i
+              ></a>
+            </li>
+            <li>
+              <a href="alertas.html">
+                <i class="fa-solid fa-triangle-exclamation"></i
+              ></a>
+            </li>
+            <li>
+              <a href="login.html" id="logout" onclick="cerrarSesion()"
+                ><i class="fa-solid fa-right-from-bracket"></i
+              ></a>
+            </li>
           </ul>
         </nav>
       </div>
+      <div class="contenido">
+        <div class="tabla-wrap">
+          <h2>Usuarios registrados</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Usuario</th>
+              </tr>
+            </thead>
+            <tbody id="lista-usuarios"></tbody>
+          </table>
+          <p id="sin-usuarios">No hay usuarios registrados.</p>
+        </div>
+      </div>
     </div>
   </body>
+  <script src="../js/usuarios.js"></script>
 </html>

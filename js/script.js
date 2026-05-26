@@ -1,4 +1,21 @@
+// Protect pasado a script.js para evitar repetición en cada página
+
 const ctx = document.getElementById('grafica');
+
+if (sessionStorage.getItem("sesion") !== "activa") {
+  window.location.replace("login.html");
+}
+
+window.addEventListener("pageshow", function(e) {
+  if (e.persisted || sessionStorage.getItem("sesion") !== "activa") {
+    window.location.replace("login.html");
+  }
+});
+
+function cerrarSesion() {
+  sessionStorage.removeItem("sesion");
+  window.location.replace("login.html");
+}
 
 new Chart(ctx, {
     type: 'line',
