@@ -5,6 +5,20 @@ import {
 } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
 
+onAuthStateChanged(auth, (user) => {
+    if (!user) {
+        window.location.replace("login.html");
+    }
+});
+
+window.addEventListener("pageshow", function(e) {
+    if (e.persisted) {
+        onAuthStateChanged(auth, (user) => {
+            if (!user) window.location.replace("login.html");
+        });
+    }
+});
+
 const lista = document.getElementById("lista-usuarios");
 const sinUsuarios = document.getElementById("sin-usuarios");
 

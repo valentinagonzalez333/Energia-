@@ -1,37 +1,90 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const ctx = document.getElementById('graficaConsumo').getContext('2d');
+import { db } from "./firebase.js";
+import {
+  doc,
+  onSnapshot,
+} from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 
-    new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: ['6AM', '9AM', '12PM', '3PM', '6PM', '9PM'],
-            datasets: [
-                {
-                    label: 'Hoy (kWh)',
-                    data: [1.2, 3.5, 4.8, 3.3, 2.1, 1.8],
-                    backgroundColor: 'rgba(245, 166, 35, 0.8)',
-                    borderRadius: 6,
-                },
-                {
-                    label: 'Predicción mañana (kWh)',
-                    data: [1.5, 3.8, 5.1, 3.0, 2.5, 2.0],
-                    backgroundColor: 'rgba(167, 139, 250, 0.7)',
-                    borderRadius: 6,
-                }
-            ]
+import { auth } from "./firebase.js";
+import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+
+onAuthStateChanged(auth, (user) => {
+    if (!user) {
+        window.location.replace("login.html");
+    }
+});
+
+window.addEventListener("pageshow", function(e) {
+    if (e.persisted) {
+        onAuthStateChanged(auth, (user) => {
+            if (!user) window.location.replace("login.html");
+        });
+    }
+});
+
+const HORAS = [
+  "6AM",
+  "7AM",
+  "8AM",
+  "9AM",
+  "10AM",
+  "11AM",
+  "12PM",
+  "1PM",
+  "2PM",
+  "3PM",
+  "4PM",
+  "5PM",
+  "6PM",
+  "7PM",
+  "8PM",
+  "9PM",
+];
+
+let chart = null;
+
+onSnapshot(doc(db, "datos-energia", "actual"), (snapshot) => {
+  if (!snapshot.exists()) return;
+  const d = snapshot.data();
+
+  document.querySelectorAll(".card h3")[0].textContent = d.potencia;
+  document.querySelectorAll(".card h3")[1].textContent = d.consumoHoy;
+  document.querySelectorAll(".card h3")[2].textContent = d.factorPotencia;
+  document.querySelectorAll(".card h3")[3].textContent = d.desviacion;
+
+  document.querySelector(".right h3").textContent =
+    `$${d.costo.toLocaleString()}`;
+  document.querySelector(".right_2 p").textContent = `${d.promedio} kW`;
+
+  const ctx = document.getElementById("graficaConsumo");
+  if (!chart) {
+    chart = new Chart(ctx, {
+      type: "bar",
+      data: {
+        labels: HORAS,
+        datasets: [
+          {
+            label: "Consumo (kWh)",
+            data: d.graficaHoy,
+            backgroundColor: "rgba(245, 166, 35, 0.8)",
+            borderRadius: 6,
+          },
+        ],
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: { legend: { labels: { font: { size: 11 }, color: "#555" } } },
+        scales: {
+          x: { grid: { display: false }, ticks: { color: "#888" } },
+          y: {
+            beginAtZero: true,
+            ticks: { color: "#888", callback: (v) => v + " kWh" },
+          },
         },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            plugins: {
-                legend: {
-                    labels: { font: { size: 11 }, color: '#555' }
-                }
-            },
-            scales: {
-                x: { grid: { display: false }, ticks: { color: '#888' } },
-                y: { beginAtZero: true, ticks: { color: '#888', callback: v => v + ' kWh' } }
-            }
-        }
+      },
     });
+  } else {
+    chart.data.datasets[0].data = d.graficaHoy;
+    chart.update();
+  }
 });
