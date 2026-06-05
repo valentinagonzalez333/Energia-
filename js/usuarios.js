@@ -1,14 +1,31 @@
+import { auth, db } from "./firebase.js";
+import {
+  collection,
+  getDocs,
+} from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+
 const lista = document.getElementById("lista-usuarios");
 const sinUsuarios = document.getElementById("sin-usuarios");
-const usuarios = JSON.parse(localStorage.getItem("usuarios") || "[]");
 
-if (usuarios.length === 0) {
+onAuthStateChanged(auth, async (user) => {
+  if (!user) {
+    window.location.replace("login.html");
+    return;
+  }
+
+  const snapshot = await getDocs(collection(db, "usuarios"));
+
+  if (snapshot.empty) {
     sinUsuarios.style.display = "block";
-} else {
+  } else {
     sinUsuarios.style.display = "none";
-    usuarios.forEach((u, i) => {
-        const fila = document.createElement("tr");
-        fila.innerHTML = `<td>${i + 1}</td><td>${u.user}</td>`;
-        lista.appendChild(fila);
+    let i = 1;
+    snapshot.forEach((doc) => {
+      const fila = document.createElement("tr");
+      fila.innerHTML = `<td>${i}</td><td>${doc.data().email}</td>`;
+      lista.appendChild(fila);
+      i++;
     });
-}
+  }
+});

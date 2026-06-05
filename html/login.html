@@ -1,76 +1,94 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Voltix – Iniciar Sesión</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/login.css">
-</head>
-<body>
-
-   
-
+    <link rel="icon" type="image/x-icon" href="../img/Lodo-voltix.png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/login.css" />
+  </head>
+  <body>
     <div class="pagina">
+      <div class="panel-izquierdo">
+        <img
+          class="foto-casa"
+          src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&auto=format&fit=crop&q=80"
+          alt="Hogar inteligente"
+        />
+        <div class="degradado-inferior"></div>
 
-     
-        <div class="panel-izquierdo">
-            <img class="foto-casa" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&auto=format&fit=crop&q=80" alt="Hogar inteligente">
-            <div class="degradado-inferior"></div>
+        <div class="contenido-marca">
+          <div class="logo">
+            <div class="logo-icono">⚡</div>
+            <span class="logo-nombre">Vol<span>tix</span></span>
+          </div>
+          <p class="frase">
+            Monitorea tu energía en tiempo real. Inteligente, eficiente,
+            sostenible.
+          </p>
 
-            <div class="contenido-marca">
-                <div class="logo">
-                    <div class="logo-icono">⚡</div>
-                    <span class="logo-nombre">Vol<span>tix</span></span>
-                </div>
-                <p class="frase">Monitorea tu energía en tiempo real. Inteligente, eficiente, sostenible.</p>
+          <div class="registrar">
+            <p class="frase">
+              ¿No tienes una cuenta? <a href="registro.html">Regístrate</a>
+            </p>
+          </div>
+        </div>
+      </div>
 
-                 <div class="registrar">
-                        <p class="frase">¿No tienes una cuenta? <a href="registro.html">Regístrate</a></p>
-                       
-                    </div>
-            </div>
+      <div class="panel-derecho">
+        <div class="cabecera-form">
+          <p class="subtitulo-form">Bienvenido</p>
+          <h2 class="titulo-form">Iniciar Sesión</h2>
         </div>
 
-      
-        <div class="panel-derecho">
-            <div class="cabecera-form">
-                <p class="subtitulo-form">Bienvenido</p>
-                <h2 class="titulo-form">Iniciar Sesión</h2>
+        <form action="" onsubmit="return false;">
+          <div class="campo">
+            <label for="usuario">Usuario</label>
+            <div class="campo-icono-wrap">
+              <input
+                type="text"
+                id="usuario"
+                name="username"
+                placeholder="usuario"
+                required
+              />
+              <span class="campo-icono">👤</span>
             </div>
+          </div>
 
-            <form action="" onsubmit="return false;">
-                <div class="campo">
-                    <label for="usuario">Usuario</label>
-                    <div class="campo-icono-wrap">
-                        <input type="text" id="usuario" name="username" placeholder="usuario" required>
-                        <span class="campo-icono">👤</span>
-                    </div>
-                </div>
+          <div class="campo">
+            <label for="contrasena">Contraseña</label>
+            <div class="campo-icono-wrap">
+              <input
+                type="password"
+                id="contrasena"
+                name="password"
+                placeholder="••••••••"
+                required
+              />
+              <span class="campo-icono">🔒</span>
+            </div>
+            <div class="olvidaste">
+              <a href="#">¿Olvidaste tu contraseña?</a>
+            </div>
+            <div class="registrar">
+              <a href="registro.html">¿No tienes una cuenta? Regístrate</a>
+            </div>
+          </div>
 
-                <div class="campo">
-                    <label for="contrasena">Contraseña</label>
-                    <div class="campo-icono-wrap">
-                        <input type="password" id="contrasena" name="password" placeholder="••••••••" required>
-                        <span class="campo-icono">🔒</span>
-                    </div>
-                    <div class="olvidaste">
-                        <a href="#">¿Olvidaste tu contraseña?</a>
-                    </div>
-                    <div class="registrar">
-                        <a href="registro.html">¿No tienes una cuenta? Regístrate</a>
-                    </div>
-                </div>
-
-                <button type="submit" class="boton-ingresar" onclick="loguear()"> Ingresar</button>
-               <div class="volver">
-                 <a href="index.html">Volver</a>
-               </div>
-            </form>
-        </div>
-
+          <button type="submit" class="boton-ingresar" onclick="loguear()">
+            Ingresar
+          </button>
+          <div class="volver">
+            <a href="../index.html">Volver</a>
+          </div>
+        </form>
+      </div>
     </div>
-
-</body>
-<script src="../js/login.js"></script>
+  </body>
+  <script type="module" src="../js/login.js"></script>
 </html>
