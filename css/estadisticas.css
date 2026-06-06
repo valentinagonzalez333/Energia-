@@ -8,7 +8,7 @@ body {
     height: 100vh;
     background-color: #f1f5f9;
     background-position: center 85%;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 .contenedor {
@@ -193,4 +193,96 @@ body {
     color: #333;
     margin: 0 0 16px;
     font-size: 15px;
+}
+
+.hamburguesa {
+    display: none;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    background: white;
+    border: none;
+    border-radius: 10px;
+    padding: 12px;
+    cursor: pointer;
+}
+
+.hamburguesa i {
+    color: #ff8c00;
+    font-size: 22px;
+}
+
+
+@media (max-width: 768px) {
+
+    body {
+        overflow-y: auto;
+    }
+
+    
+    .hamburguesa {
+        display: block;
+    }
+
+   
+    .menu {
+        position: fixed;
+        left: -100px;
+        top: 0;
+        margin: 0;
+        height: 100vh;
+        z-index: 999;
+        transition: left 0.3s ease;
+    }
+
+    .menu.abierto {
+        left: 0;
+    }
+
+    .menu nav {
+        height: 100vh;
+        border-radius: 0;
+    }
+
+    
+    .principal img {
+        width: 70px;
+    }
+
+    .principal h1 {
+        font-size: 1.2rem;
+    }
+
+
+    .contenido-estadisticas {
+        padding: 15px;
+        height: auto;
+    }
+
+   
+    .stats-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .resumen-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .stat-card {
+        width: 100%;
+    }
+
+   
+    .grafica-wrap {
+        height: auto;
+        padding: 15px;
+    }
+
+    #graficaSemana {
+        width: 100% !important;
+        height: 250px !important;
+    }
 }

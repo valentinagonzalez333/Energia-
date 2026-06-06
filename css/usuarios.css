@@ -11,7 +11,7 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center 85%;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 .contenedor {
@@ -179,4 +179,104 @@ tr:last-child td {
     font-weight: 600;
     background: rgba(255, 140, 0, 0.15);
     color: #ff8c00;
+}
+
+
+
+.hamburguesa {
+    display: none;
+}
+
+
+@media (max-width:768px){
+
+    .hamburguesa{
+        display:block;
+        position:fixed;
+        top:20px;
+        right:20px;
+        z-index:1000;
+        background:white;
+        border:none;
+        border-radius:10px;
+        padding:12px;
+        cursor:pointer;
+    }
+
+    .hamburguesa i{
+        color:#ff8c00;
+        font-size:22px;
+    }
+
+    .menu{
+        position:fixed;
+        left:-100px;
+        top:0;
+        margin:0;
+        height:100vh;
+        z-index:999;
+        transition:left .3s ease;
+    }
+
+    .menu.abierto{
+        left:0;
+    }
+
+    .menu nav{
+        height:100vh;
+        border-radius:0;
+    }
+}
+
+@media (max-width: 768px) {
+
+    body {
+        overflow-y: auto;
+    }
+
+    
+    .principal img {
+        width: 70px;
+    }
+
+    .principal h1 {
+        font-size: 1.2rem;
+    }
+
+   
+    .contenido {
+        width: 100%;
+        height: auto;
+        padding: 15px;
+        align-items: flex-start;
+    }
+
+    .tabla-wrap {
+        width: 100%;
+        min-width: unset;
+        padding: 20px;
+        overflow-x: auto;
+    }
+
+    
+    .usuarios-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .usuarios-header h2 {
+        font-size: 1.2rem;
+    }
+
+    
+    table {
+        min-width: 500px;
+    }
+
+    th,
+    td {
+        padding: 10px;
+        font-size: 13px;
+    }
 }

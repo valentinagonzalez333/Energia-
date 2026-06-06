@@ -1,64 +1,62 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Alertas</title>
-    <link rel="icon" type="image/x-icon" href="../img/Lodo-voltix.png" />
-    <link rel="stylesheet" href="../css/alertas.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    />
-  </head>
-  <body>
-    <div class="principal">
-      <img src="../img/Lodo-voltix.png" alt="" />
-      <h1>Voltix</h1>
-    </div>
-    <div class="contenedor">
-      <div class="menu">
-        <nav>
-          <ul>
-            <li>
-              <a href="panel.html"><i class="fa-solid fa-chart-line"></i></a>
-            </li>
-            <li>
-              <a href="monitoreo.html"><i class="fa-solid fa-bolt"></i></a>
-            </li>
-            <li>
-              <a href="estadisticas.html"
-                ><i class="fa-solid fa-chart-pie"></i
-              ></a>
-            </li>
-            <li>
-              <a href="usuarios.html"><i class="fa-solid fa-users"></i></a>
-            </li>
-            <li>
-              <a href="alertas.html" class="activo"
-                ><i class="fa-solid fa-triangle-exclamation"></i
-              ></a>
-            </li>
-            <li>
-              <a href="login.html" id="logout" onclick="cerrarSesion()"
-                ><i class="fa-solid fa-right-from-bracket"></i
-              ></a>
-            </li>
-          </ul>
-        </nav>
-      </div>
 
-      <div class="contenido-alertas">
-        <div class="alertas-header">
-          <h2>Centro de Alertas</h2>
-          <span id="total-alertas" class="badge">0 activas</span>
-        </div>
-        <div id="lista-alertas" class="lista-alertas">
-          <p class="sin-alertas">Cargando alertas...</p>
-        </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alertas</title>
+  <link rel="icon" type="image/x-icon" href="../img/Lodo-voltix.png" />
+  <link rel="stylesheet" href="../css/alertas.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+
+<body>
+  <div class="principal">
+    <img src="../img/Lodo-voltix.png" alt="" />
+    <h1>Voltix</h1>
+  </div>
+  <button class="hamburguesa" id="hamburguesa">
+    <i class="fa-solid fa-bars"></i>
+  </button>
+
+  <div class="contenedor">
+    <div class="menu">
+      <nav>
+        <ul>
+          <li>
+            <a href="panel.html"><i class="fa-solid fa-chart-line"></i></a>
+          </li>
+          <li>
+            <a href="monitoreo.html"><i class="fa-solid fa-bolt"></i></a>
+          </li>
+          <li>
+            <a href="estadisticas.html"><i class="fa-solid fa-chart-pie"></i></a>
+          </li>
+          <li>
+            <a href="usuarios.html"><i class="fa-solid fa-users"></i></a>
+          </li>
+          <li>
+            <a href="alertas.html" class="activo"><i class="fa-solid fa-triangle-exclamation"></i></a>
+          </li>
+          <li>
+            <a href="login.html" id="logout" onclick="cerrarSesion()"><i class="fa-solid fa-right-from-bracket"></i></a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="contenido-alertas">
+      <div class="alertas-header">
+        <h2>Centro de Alertas</h2>
+        <span id="total-alertas" class="badge">0 activas</span>
+      </div>
+      <div id="lista-alertas" class="lista-alertas">
+        <p class="sin-alertas">Cargando alertas...</p>
       </div>
     </div>
-  </body>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
-  <script type="module" src="../js/alertas.js"></script>
+  </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+<script type="module" src="../js/alertas.js"></script>
+
 </html>

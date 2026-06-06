@@ -206,3 +206,75 @@ body {
     color: #888;
     font-size: 14px;
 }
+
+
+.hamburguesa {
+    display: none;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+
+    background: white;
+    border: none;
+    border-radius: 10px;
+    padding: 12px;
+    cursor: pointer;
+}
+
+.hamburguesa i {
+    font-size: 22px;
+    color: #ff8c00;
+}
+
+
+
+
+@media (max-width: 768px) {
+
+    body {
+        overflow: auto;
+    }
+
+    .hamburguesa {
+        display: block;
+    }
+
+    .menu {
+        position: fixed;
+        left: -100px;
+        top: 0;
+        margin: 0;
+        height: 100vh;
+        z-index: 999;
+
+        transition: left 0.3s ease;
+    }
+
+    .menu.abierto {
+        left: 0;
+    }
+
+    .menu nav {
+        height: 100vh;
+        border-radius: 0;
+    }
+
+    .contenido-alertas {
+        padding: 20px;
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .principal {
+        padding-left: 10px;
+    }
+
+    .principal img {
+        width: 70px;
+    }
+
+    .principal h1 {
+        font-size: 1.2rem;
+    }
+}

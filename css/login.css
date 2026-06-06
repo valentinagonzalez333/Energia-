@@ -11,7 +11,7 @@ body {
     align-items: center;
     justify-content: center;
     background: #e8ecf0;
-    overflow: hidden;
+    overflow-x: hidden;
     position: relative;
 }
 
@@ -273,3 +273,81 @@ body {
     transform: translateY(0);
 }
 
+
+@media (max-width: 768px) {
+
+    body {
+        overflow-y: auto;
+        overflow-x: hidden;
+        padding: 20px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .pagina {
+        width: 100%;
+        max-width: 450px;
+        min-height: auto;
+        border-radius: 18px;
+    }
+
+    
+    .panel-izquierdo {
+        display: none;
+    }
+
+    
+    .panel-derecho {
+        width: 100%;
+        padding: 35px 25px;
+    }
+
+    .cabecera-form {
+        text-align: center;
+        margin-bottom: 25px;
+    }
+
+    .subtitulo-form {
+        font-size: 10px;
+    }
+
+    .titulo-form {
+        font-size: 22px;
+    }
+
+    .campo {
+        margin-bottom: 18px;
+    }
+
+    .campo label {
+        font-size: 12px;
+    }
+
+    .campo input {
+        font-size: 16px;
+        padding: 12px 14px 12px 42px;
+    }
+
+    .campo-icono {
+        font-size: 14px;
+    }
+
+    .olvidaste,
+    .registrar,
+    .volver {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .olvidaste a,
+    .registrar a,
+    .volver a {
+        font-size: 13px;
+    }
+
+    .boton-ingresar {
+        width: 100%;
+        padding: 14px;
+        font-size: 15px;
+    }
+}

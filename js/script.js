@@ -134,6 +134,11 @@ onSnapshot(doc(db, "datos-energia", "actual"), (snapshot) => {
     chart.update();
   }
 });
+const hamburguesa = document.getElementById("hamburguesa");
+const menu = document.querySelector(".menu");
 
+hamburguesa.addEventListener("click", () => {
+    menu.classList.toggle("abierto");
+});
 actualizarFirestore();
 setInterval(actualizarFirestore, 5000);
