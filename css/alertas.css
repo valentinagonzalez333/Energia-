@@ -6,7 +6,10 @@ body {
     margin: 0;
     width: 100vw;
     height: 100vh;
-    background-color: #f1f5f9;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.25),
+            rgba(255, 255, 255, 0.25)), url("../img/casa_fondo.png");
+    background-size: cover;
+    background-repeat: no-repeat;
     background-position: center 85%;
     overflow: hidden;
 }
@@ -57,7 +60,7 @@ body {
 .menu nav {
     background-color: white;
     width: 60px;
-    height:580px;
+    height: 580px;
     border-radius: 20px;
 }
 
@@ -103,4 +106,103 @@ body {
     color: rgba(255, 140, 0, 0.18);
     box-shadow: 0 0 35px rgba(255, 140, 0, 0.35);
     transition: color 0.3s ease;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap');
+
+.contenido-alertas {
+    padding: 30px;
+    width: 100%;
+    overflow-y: auto;
+    height: calc(100vh - 120px);
+}
+
+.alertas-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.alertas-header h2 {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    margin: 0;
+}
+
+.badge {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.badge-alerta {
+    background: rgba(255, 80, 80, 0.15);
+    color: #e53e3e;
+}
+
+.badge-ok {
+    background: rgba(72, 187, 120, 0.15);
+    color: #38a169;
+}
+
+.lista-alertas {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.alerta {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 16px 20px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-left: 4px solid transparent;
+}
+
+.alerta.critica {
+    border-left-color: #e53e3e;
+    background: rgba(255, 80, 80, 0.05);
+}
+
+.alerta.advertencia {
+    border-left-color: #d69e2e;
+    background: rgba(255, 200, 0, 0.05);
+}
+
+.alerta.normal {
+    border-left-color: #38a169;
+    background: rgba(72, 187, 120, 0.05);
+}
+
+.alerta-icono {
+    font-size: 22px;
+    margin-top: 2px;
+}
+
+.alerta-info h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: #333;
+    margin: 0 0 4px;
+}
+
+.alerta-info p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    color: #555;
+    margin: 0;
+}
+
+.sin-alertas {
+    font-family: 'Poppins', sans-serif;
+    color: #888;
+    font-size: 14px;
 }

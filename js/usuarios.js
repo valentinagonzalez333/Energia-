@@ -22,11 +22,24 @@ onAuthStateChanged(auth, async (user) => {
   } else {
     sinUsuarios.style.display = "none";
     let i = 1;
-    snapshot.forEach((doc) => {
-      const fila = document.createElement("tr");
-      fila.innerHTML = `<td>${i}</td><td>${doc.data().email}</td>`;
-      lista.appendChild(fila);
-      i++;
-    });
+    if (snapshot.empty) {
+      sinUsuarios.style.display = "block";
+    } else {
+      sinUsuarios.style.display = "none";
+      let i = 1;
+      snapshot.forEach((doc) => {
+        const data = doc.data();
+        const fila = document.createElement("tr");
+        fila.innerHTML = `
+            <td>${i}</td>
+            <td>${data.email}</td>
+            <td>${data.fechaRegistro || "Sin fecha"}</td>
+        `;
+        lista.appendChild(fila);
+        i++;
+      });
+      document.getElementById("total-usuarios").textContent =
+        `${snapshot.size} usuario${snapshot.size !== 1 ? "s" : ""}`;
+    }
   }
 });

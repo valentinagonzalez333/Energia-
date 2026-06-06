@@ -35,8 +35,8 @@
               <a href="usuarios.html"><i class="fa-solid fa-users"></i></a>
             </li>
             <li>
-              <a href="alertas.html">
-                <i class="fa-solid fa-triangle-exclamation"></i
+              <a href="alertas.html"
+                ><i class="fa-solid fa-triangle-exclamation"></i
               ></a>
             </li>
             <li>
@@ -47,8 +47,51 @@
           </ul>
         </nav>
       </div>
+
+      <div class="contenido-estadisticas">
+        <div class="stats-header">
+          <h2>Estadísticas</h2>
+          <span id="mes-actual" class="mes-label"></span>
+        </div>
+
+        <div class="resumen-cards">
+          <div class="stat-card">
+            <span class="stat-icono">⚡</span>
+            <div>
+              <p class="stat-label">Consumo del mes</p>
+              <h3 id="stat-consumo">-- kWh</h3>
+            </div>
+          </div>
+          <div class="stat-card">
+            <span class="stat-icono">💰</span>
+            <div>
+              <p class="stat-label">Costo del mes</p>
+              <h3 id="stat-costo">$--</h3>
+            </div>
+          </div>
+          <div class="stat-card">
+            <span class="stat-icono">🌱</span>
+            <div>
+              <p class="stat-label">CO₂ del mes</p>
+              <h3 id="stat-co2">-- kg</h3>
+            </div>
+          </div>
+          <div class="stat-card">
+            <span class="stat-icono">📊</span>
+            <div>
+              <p class="stat-label">Promedio diario</p>
+              <h3 id="stat-promedio">-- kWh</h3>
+            </div>
+          </div>
+        </div>
+
+        <div class="grafica-wrap">
+          <h3>Consumo últimos 7 días</h3>
+          <canvas id="graficaSemana"></canvas>
+        </div>
+      </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script type="module" src="../js/estadisticas.js"></script>
   </body>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
-  <script type="module" src="../js/estadisticas.js"></script>
 </html>

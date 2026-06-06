@@ -34,6 +34,11 @@ function registrar() {
       return setDoc(doc(db, "usuarios", cred.user.uid), {
         email: user,
         uid: cred.user.uid,
+        fechaRegistro: new Date().toLocaleDateString("es-CO", {
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+        }),
       });
     })
     .then(() => {
