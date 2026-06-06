@@ -142,7 +142,7 @@
       function agregarMensaje(texto, tipo) {
         const div = document.createElement("div");
         div.className = `mensaje ${tipo}`;
-        div.innerHTML = `<span>${texto}</span>`;
+        div.innerHTML = `<span>${texto.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').replace(/\n/g, '<br>')}</span>`;
         mensajes.appendChild(div);
         mensajes.scrollTop = mensajes.scrollHeight;
         return div;
