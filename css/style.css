@@ -9,15 +9,14 @@ canvas {
 body {
     margin: 0;
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     background-image: linear-gradient(rgba(255, 255, 255, 0.18),
             rgba(255, 255, 255, 0.18)), url("../img/casa_fondo.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center 85%;
-    overflow: hidden;
+    overflow-x: hidden;
 }
-
 .contenedor {
     width: 100%;
     display: flex;
@@ -128,7 +127,7 @@ body {
     padding: 20px 28px;
     border-radius: 20px;
     font-family: 'Poppins', sans-serif;
-    margin-right: 280px;
+    margin-right: 20px;    
 }
 
 .card_1 h2 {
@@ -276,46 +275,6 @@ body {
     display: none;
 }
 
-@media (max-width:768px){
-
-    .hamburguesa{
-        display:block;
-        position:fixed;
-        top:20px;
-        right:20px;
-        z-index:1000;
-        background:white;
-        border:none;
-        border-radius:10px;
-        padding:12px;
-        cursor:pointer;
-    }
-
-    .hamburguesa i{
-        color:#ff8c00;
-        font-size:22px;
-    }
-
-    .menu{
-        position:fixed;
-        left:-100px;
-        top:0;
-        margin:0;
-        height:100vh;
-        z-index:999;
-        transition:left .3s ease;
-    }
-
-    .menu.abierto{
-        left:0;
-    }
-
-    .menu nav{
-        height:100vh;
-        border-radius:0;
-    }
-}
-
 
 .boton-ia{
     position: fixed;
@@ -358,25 +317,16 @@ body {
         0 0 25px rgba(255, 140, 0, 0.35);
 }
 
-@media (max-width:768px){
-
-    .boton-ia{
-        width: 55px;
-        height: 55px;
-        font-size: 20px;
-        bottom: 15px;
-        right: 15px;
-    }
-
-}
-
 @media (max-width: 768px) {
 
     body {
         overflow-y: auto;
     }
 
-    
+    .contenedor {
+        flex-direction: column;
+    }
+
     .principal img {
         width: 70px;
     }
@@ -385,12 +335,6 @@ body {
         font-size: 1.2rem;
     }
 
-   
-    .contenedor {
-        flex-direction: column;
-    }
-
-    
     .cards {
         width: 100%;
         align-items: stretch;
@@ -398,7 +342,6 @@ body {
         gap: 15px;
     }
 
-    
     .card_1 {
         width: 100%;
         margin-right: 0;
@@ -413,7 +356,6 @@ body {
         font-size: 20px;
     }
 
-    
     .card_2 {
         width: 100%;
         margin-right: 0;
@@ -425,7 +367,6 @@ body {
         height: 250px !important;
     }
 
-    
     .infos {
         width: 100%;
         margin-right: 0;
@@ -442,5 +383,50 @@ body {
 
     .info p {
         font-size: 20px;
+    }
+
+    .hamburguesa {
+        display: block;
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 1000;
+        background: white;
+        border: none;
+        border-radius: 10px;
+        padding: 12px;
+        cursor: pointer;
+    }
+
+    .hamburguesa i {
+        color: #ff8c00;
+        font-size: 22px;
+    }
+
+    .menu {
+        position: fixed;
+        left: -100px;
+        top: 0;
+        margin: 0;
+        height: 100vh;
+        z-index: 999;
+        transition: left .3s ease;
+    }
+
+    .menu.abierto {
+        left: 0;
+    }
+
+    .menu nav {
+        height: 100vh;
+        border-radius: 0;
+    }
+
+    .boton-ia {
+        width: 55px;
+        height: 55px;
+        font-size: 20px;
+        bottom: 15px;
+        right: 15px;
     }
 }

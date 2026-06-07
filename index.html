@@ -25,6 +25,9 @@
       </nav>
 
       <a href="html/login.html" class="boton-login"> Iniciar Sesión </a>
+       <button class="hamburguesa" id="hamburguesa">
+    <i class="fa-solid fa-bars"></i>
+  </button>
     </header>
 
     <section class="inicio" id="inicio">
@@ -163,6 +166,19 @@
       input.addEventListener("keydown", (e) => {
         if (e.key === "Enter") enviarMensaje();
       });
+
+       const hamburguesa = document.getElementById('hamburguesa');
+  const menu = document.getElementById('menu');
+
+  hamburguesa.addEventListener('click', () => {
+    menu.classList.toggle('abierto');
+  });
+
+  menu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      menu.classList.remove('abierto');
+    });
+  });
     </script>
   </body>
 </html>

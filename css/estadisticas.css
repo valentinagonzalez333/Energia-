@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap');
+
+
 * {
     box-sizing: border-box;
 }
@@ -5,13 +8,13 @@
 body {
     margin: 0;
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     background-image: linear-gradient(rgba(255, 255, 255, 0.18),
             rgba(255, 255, 255, 0.18)), url("../img/casa_fondo.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center 85%;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 .contenedor {
@@ -106,8 +109,6 @@ body {
     box-shadow: 0 0 35px rgba(255, 140, 0, 0.35);
     transition: color 0.3s ease;
 }
-
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap');
 
 
 .contenido-estadisticas {
@@ -282,30 +283,15 @@ body {
         0 12px 30px rgba(255, 140, 0, 0.5),
         0 0 25px rgba(255, 140, 0, 0.35);
 }
-
-@media (max-width:768px) {
-
-    .boton-ia {
-        width: 55px;
-        height: 55px;
-        font-size: 20px;
-        bottom: 15px;
-        right: 15px;
-    }
-
-}
-
 @media (max-width: 768px) {
 
     body {
         overflow-y: auto;
     }
 
-
     .hamburguesa {
         display: block;
     }
-
 
     .menu {
         position: fixed;
@@ -326,7 +312,6 @@ body {
         border-radius: 0;
     }
 
-
     .principal img {
         width: 70px;
     }
@@ -335,12 +320,14 @@ body {
         font-size: 1.2rem;
     }
 
+    .contenedor {
+        flex-direction: column;
+    }
 
     .contenido-estadisticas {
         padding: 15px;
         height: auto;
     }
-
 
     .stats-header {
         flex-direction: column;
@@ -349,13 +336,12 @@ body {
     }
 
     .resumen-cards {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
     }
 
     .stat-card {
         width: 100%;
     }
-
 
     .grafica-wrap {
         height: auto;
@@ -365,5 +351,13 @@ body {
     #graficaSemana {
         width: 100% !important;
         height: 250px !important;
+    }
+
+    .boton-ia {
+        width: 55px;
+        height: 55px;
+        font-size: 20px;
+        bottom: 15px;
+        right: 15px;
     }
 }

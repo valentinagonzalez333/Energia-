@@ -1,3 +1,5 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap');
 * {
     box-sizing: border-box;
 }
@@ -5,13 +7,13 @@
 body {
     margin: 0;
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     background-image: linear-gradient(rgba(255, 255, 255, 0.25),
             rgba(255, 255, 255, 0.25)), url("../img/casa_fondo.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center 85%;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 .contenedor {
@@ -108,7 +110,7 @@ body {
     transition: color 0.3s ease;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap');
+
 
 .contenido-alertas {
     padding: 30px;
@@ -267,24 +269,10 @@ body {
         0 12px 30px rgba(255, 140, 0, 0.5),
         0 0 25px rgba(255, 140, 0, 0.35);
 }
-
-@media (max-width:768px){
-
-    .boton-ia{
-        width: 55px;
-        height: 55px;
-        font-size: 20px;
-        bottom: 15px;
-        right: 15px;
-    }
-
-}
-
-
 @media (max-width: 768px) {
 
     body {
-        overflow: auto;
+        overflow-y: auto;
     }
 
     .hamburguesa {
@@ -298,7 +286,6 @@ body {
         margin: 0;
         height: 100vh;
         z-index: 999;
-
         transition: left 0.3s ease;
     }
 
@@ -311,10 +298,8 @@ body {
         border-radius: 0;
     }
 
-    .contenido-alertas {
-        padding: 20px;
-        width: 100%;
-        margin-left: 0;
+    .contenedor {
+        flex-direction: column;
     }
 
     .principal {
@@ -327,5 +312,32 @@ body {
 
     .principal h1 {
         font-size: 1.2rem;
+    }
+
+    .contenido-alertas {
+        padding: 15px;
+        width: 100%;
+        height: auto;
+    }
+
+    .alerta {
+        padding: 12px 14px;
+        gap: 12px;
+    }
+
+    .alerta-info h3 {
+        font-size: 14px;
+    }
+
+    .alerta-info p {
+        font-size: 12px;
+    }
+
+    .boton-ia {
+        width: 55px;
+        height: 55px;
+        font-size: 20px;
+        bottom: 15px;
+        right: 15px;
     }
 }
