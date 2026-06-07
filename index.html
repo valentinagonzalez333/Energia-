@@ -7,7 +7,9 @@
   <title>Voltix</title>
   <link rel="icon" type="image/x-icon" href="img/Lodo-voltix.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   <link rel="stylesheet" href="css/index.css" />
 </head>
@@ -128,6 +130,21 @@
   <footer class="footer">
     <p>Voltix • Sistema Inteligente de Monitoreo Energético</p>
   </footer>
+
+  <script>
+    const hamburguesa = document.getElementById('hamburguesa');
+    const menu = document.querySelector('.menu');
+
+    hamburguesa.addEventListener('click', () => {
+      menu.classList.toggle('abierto');
+    });
+
+    menu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        menu.classList.remove('abierto');
+      });
+    });
+  </script>
   <script type="module">
     import { preguntarGemini } from "./js/gemini.js";
 
@@ -158,19 +175,6 @@
     enviar.addEventListener("click", enviarMensaje);
     input.addEventListener("keydown", (e) => {
       if (e.key === "Enter") enviarMensaje();
-    });
-
-    const hamburguesa = document.getElementById('hamburguesa');
-    const menu = document.getElementById('menu');
-
-    hamburguesa.addEventListener('click', () => {
-      menu.classList.toggle('abierto');
-    });
-
-    menu.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        menu.classList.remove('abierto');
-      });
     });
   </script>
 </body>
