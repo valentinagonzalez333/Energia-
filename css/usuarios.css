@@ -279,6 +279,66 @@ tr:last-child td {
     }
 
 }
+
+
+.seccion-titulo {
+    font-family: 'Orbitron', sans-serif;
+    color: white;
+    font-size: 1.4em;
+    margin: 0 0 8px 0;
+}
+
+.seccion-desc {
+    font-family: 'Poppins', sans-serif;
+    color: rgba(255, 255, 255, 0.55);
+    font-size: 13px;
+    margin: 0 0 20px 0;
+    line-height: 1.6;
+    max-width: 520px;
+}
+
+.usuarios-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.search-wrap {
+    position: relative;
+    flex: 1;
+}
+
+.search-icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(255, 255, 255, 0.35);
+    font-size: 13px;
+    pointer-events: none;
+}
+
+.buscador {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 10px;
+    padding: 9px 14px 9px 36px;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+.buscador::placeholder {
+    color: rgba(255, 255, 255, 0.35);
+}
+
+.buscador:focus {
+    border-color: rgba(255, 140, 0, 0.5);
+}
 @media (max-width: 768px) {
 
     body {

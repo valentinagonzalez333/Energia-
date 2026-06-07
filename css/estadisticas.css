@@ -114,6 +114,7 @@ body {
     padding: 30px;
     width: 100%;
 }
+
 .stats-header {
     display: flex;
     align-items: center;
@@ -145,7 +146,7 @@ body {
 }
 
 .stat-card {
-    background: white;
+
     border-radius: 16px;
     padding: 20px;
     display: flex;
@@ -174,10 +175,9 @@ body {
 }
 
 .grafica-wrap {
-    background: white;
+
     border-radius: 16px;
-    padding: 30px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    padding: 40px;
     height: 280px;
 }
 
@@ -187,6 +187,44 @@ body {
     margin: 0 0 16px;
     font-size: 15px;
 }
+
+
+.stat-card,
+.grafica-wrap {
+      backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.10),
+        inset 0 1px 0 rgba(255, 255, 255, 0.25);
+    animation: floatIn 0.8s ease forwards;
+    opacity: 0;
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease;
+}
+
+.stat-card{
+     animation-delay: 0.1s;
+}
+.grafica-wrap {
+    animation-delay: 0.3s;
+}
+
+@keyframes floatIn {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
 
 .hamburguesa {
     display: none;
@@ -206,7 +244,7 @@ body {
     font-size: 22px;
 }
 
-.boton-ia{
+.boton-ia {
     position: fixed;
     bottom: 20px;
     right: 20px;
@@ -217,11 +255,9 @@ body {
     border: none;
     border-radius: 50%;
 
-    background: linear-gradient(
-        135deg,
-        rgba(255, 140, 0, 0.9),
-        rgba(245, 158, 11, 0.9)
-    );
+    background: linear-gradient(135deg,
+            rgba(255, 140, 0, 0.9),
+            rgba(245, 158, 11, 0.9));
 
     color: white;
     font-size: 24px;
@@ -240,16 +276,16 @@ body {
     transition: all 0.3s ease;
 }
 
-.boton-ia:hover{
+.boton-ia:hover {
     transform: translateY(-4px) scale(1.05);
     box-shadow:
         0 12px 30px rgba(255, 140, 0, 0.5),
         0 0 25px rgba(255, 140, 0, 0.35);
 }
 
-@media (max-width:768px){
+@media (max-width:768px) {
 
-    .boton-ia{
+    .boton-ia {
         width: 55px;
         height: 55px;
         font-size: 20px;
@@ -258,18 +294,19 @@ body {
     }
 
 }
+
 @media (max-width: 768px) {
 
     body {
         overflow-y: auto;
     }
 
-    
+
     .hamburguesa {
         display: block;
     }
 
-   
+
     .menu {
         position: fixed;
         left: -100px;
@@ -289,7 +326,7 @@ body {
         border-radius: 0;
     }
 
-    
+
     .principal img {
         width: 70px;
     }
@@ -304,7 +341,7 @@ body {
         height: auto;
     }
 
-   
+
     .stats-header {
         flex-direction: column;
         align-items: flex-start;
@@ -319,7 +356,7 @@ body {
         width: 100%;
     }
 
-   
+
     .grafica-wrap {
         height: auto;
         padding: 15px;

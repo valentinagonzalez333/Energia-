@@ -47,25 +47,34 @@
         </ul>
       </nav>
     </div>
-    <div class="contenido">
-      <div class="tabla-wrap">
-        <div class="usuarios-header">
-          <h2>Usuarios registrados</h2>
-          <span id="total-usuarios" class="badge-usuarios">0 usuarios</span>
-        </div>
-        <table>
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Usuario</th>
-              <th>Fecha de registro</th>
-            </tr>
-          </thead>
-          <tbody id="lista-usuarios"></tbody>
-        </table>
-        <p id="sin-usuarios">No hay usuarios registrados.</p>
+   <div class="contenido">
+  <div class="tabla-wrap">
+
+    <h2 class="seccion-titulo">Usuarios</h2>
+    <p class="seccion-desc">Consulta y gestiona todos los usuarios registrados en la plataforma Voltix. Desde aquí puedes ver quién tiene acceso al sistema de monitoreo energético.</p>
+
+    <div class="usuarios-header">
+      <div class="search-wrap">
+        <i class="fa-solid fa-magnifying-glass search-icon"></i>
+        <input type="text" id="buscador" class="buscador" placeholder="Buscar usuario..." />
       </div>
+      <span id="total-usuarios" class="badge-usuarios">0 usuarios</span>
     </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Usuario</th>
+          <th>Fecha de registro</th>
+        </tr>
+      </thead>
+      <tbody id="lista-usuarios"></tbody>
+    </table>
+    <p id="sin-usuarios">No hay usuarios registrados.</p>
+
+  </div>
+</div>
   </div>
   <button class="boton-ia">
     <i class="fa-solid fa-robot"></i>

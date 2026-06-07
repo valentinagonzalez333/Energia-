@@ -19,33 +19,38 @@ onAuthStateChanged(auth, async (user) => {
 
   if (snapshot.empty) {
     sinUsuarios.style.display = "block";
-  } else {
-    sinUsuarios.style.display = "none";
-    let i = 1;
-    if (snapshot.empty) {
-      sinUsuarios.style.display = "block";
-    } else {
-      sinUsuarios.style.display = "none";
-      let i = 1;
-      snapshot.forEach((doc) => {
-        const data = doc.data();
-        const fila = document.createElement("tr");
-        fila.innerHTML = `
-            <td>${i}</td>
-            <td>${data.email}</td>
-            <td>${data.fechaRegistro || "Sin fecha"}</td>
-        `;
-        lista.appendChild(fila);
-        i++;
-      });
-      document.getElementById("total-usuarios").textContent =
-        `${snapshot.size} usuario${snapshot.size !== 1 ? "s" : ""}`;
-    }
+    return;
   }
+
+  sinUsuarios.style.display = "none";
+  let i = 1;
+  snapshot.forEach((doc) => {
+    const data = doc.data();
+    const fila = document.createElement("tr");
+    fila.innerHTML = `
+      <td>${i}</td>
+      <td>${data.email}</td>
+      <td>${data.fechaRegistro || "Sin fecha"}</td>
+    `;
+    lista.appendChild(fila);
+    i++;
+  });
+
+  document.getElementById("total-usuarios").textContent =
+    `${snapshot.size} usuario${snapshot.size !== 1 ? "s" : ""}`;
+
+  // Buscador
+  document.getElementById("buscador").addEventListener("input", function () {
+    const q = this.value.toLowerCase();
+    document.querySelectorAll("#lista-usuarios tr").forEach((row) => {
+      row.style.display = row.textContent.toLowerCase().includes(q) ? "" : "none";
+    });
+  });
 });
+
 const hamburguesa = document.getElementById("hamburguesa");
 const menu = document.querySelector(".menu");
 
 hamburguesa.addEventListener("click", () => {
-    menu.classList.toggle("abierto");
+  menu.classList.toggle("abierto");
 });
