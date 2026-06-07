@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -447,6 +449,7 @@ body {
 .chat-input button:hover {
     opacity: 0.85;
 }
+
 .hamburguesa {
     display: none;
     position: fixed;
@@ -465,6 +468,7 @@ body {
     font-size: 22px;
     color: #ff8c00;
 }
+
 @media (max-width: 768px) {
 
     .encabezado {
@@ -479,7 +483,7 @@ body {
         display: none;
     }
 
-     .hamburguesa {
+    .hamburguesa {
         display: block;
     }
 
@@ -585,5 +589,17 @@ body {
     .card-ia {
         width: 100%;
         padding: 20px;
+    }
+
+    .chat-input {
+        flex-wrap: nowrap;
+    }
+
+    .chat-input input {
+        min-width: 0;
+    }
+
+    .chat-input button {
+        flex-shrink: 0;
     }
 }
