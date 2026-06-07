@@ -6,9 +6,12 @@ body {
     margin: 0;
     width: 100vw;
     height: 100vh;
-    background-color: #f1f5f9;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.25),
+            rgba(255, 255, 255, 0.25)), url("../img/casa_fondo.png");
+    background-size: cover;
+    background-repeat: no-repeat;
     background-position: center 85%;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
 .contenedor {
@@ -107,12 +110,6 @@ body {
 
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap');
 
-body {
-    background-image: linear-gradient(rgba(255, 255, 255, 0.55),
-            rgba(255, 255, 255, 0.55)), url("../img/casa_fondo.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-}
 
 .contenido-estadisticas {
     padding: 30px;
