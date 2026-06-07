@@ -39,7 +39,7 @@ onAuthStateChanged(auth, async (user) => {
   document.getElementById("total-usuarios").textContent =
     `${snapshot.size} usuario${snapshot.size !== 1 ? "s" : ""}`;
 
-  // Buscador
+  
   document.getElementById("buscador").addEventListener("input", function () {
     const q = this.value.toLowerCase();
     document.querySelectorAll("#lista-usuarios tr").forEach((row) => {
