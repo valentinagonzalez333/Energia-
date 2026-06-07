@@ -10,7 +10,7 @@ canvas {
 body {
     margin: 0;
     width: 100vw;
-    height: 100vh;
+     min-height: 100vh;
     background-image: linear-gradient(rgba(255, 255, 255, 0.18),
             rgba(255, 255, 255, 0.18)), url("../img/casa_fondo.png");
     background-size: cover;
@@ -302,14 +302,12 @@ body {
 @keyframes floatIn {
     from {
         opacity: 0;
-        transform: translateY(40px) scale(0.92);
-        filter: blur(8px);
+        transform: translateY(40px);
     }
 
     to {
         opacity: 1;
-        transform: translateY(0) scale(1);
-        filter: blur(0);
+        transform: translateY(0);
     }
 }
 
@@ -346,6 +344,7 @@ body {
 .hamburguesa {
     display: none;
 }
+
 
 @media (max-width:768px){
 
@@ -385,6 +384,59 @@ body {
         height:100vh;
         border-radius:0;
     }
+}
+
+.boton-ia{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+
+    width: 60px;
+    height: 60px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: linear-gradient(
+        135deg,
+        rgba(255, 140, 0, 0.9),
+        rgba(245, 158, 11, 0.9)
+    );
+
+    color: white;
+    font-size: 24px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+    z-index: 2000;
+
+    box-shadow:
+        0 8px 25px rgba(255, 140, 0, 0.4),
+        0 0 20px rgba(255, 140, 0, 0.25);
+
+    transition: all 0.3s ease;
+}
+
+.boton-ia:hover{
+    transform: translateY(-4px) scale(1.05);
+    box-shadow:
+        0 12px 30px rgba(255, 140, 0, 0.5),
+        0 0 25px rgba(255, 140, 0, 0.35);
+}
+
+@media (max-width:768px){
+
+    .boton-ia{
+        width: 55px;
+        height: 55px;
+        font-size: 20px;
+        bottom: 15px;
+        right: 15px;
+    }
+
 }
 
 @media (max-width: 768px) {
