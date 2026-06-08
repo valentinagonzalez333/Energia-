@@ -1,3 +1,11 @@
+html.dark-init body {
+    --fondo-overlay: rgba(0, 0, 0, 0.55);
+    --card-bg: rgba(0, 0, 0, 0.35);
+    --card-border: rgba(255, 255, 255, 0.1);
+    --card-shadow: rgba(0, 0, 0, 0.4);
+    --menu-bg: #1a1a1a;
+}
+
 * {
     box-sizing: border-box;
 }
@@ -222,4 +230,76 @@ body {
 
 .boton-ia:hover {
     transform: translateY(-4px) scale(1.05);
+}
+
+:root {
+    --fondo-overlay: rgba(255, 255, 255, 0.18);
+    --menu-bg: white;
+    --card-bg: rgba(255, 255, 255, 0.15);
+    --card-border: rgba(255, 255, 255, 0.2);
+    --card-shadow: rgba(0, 0, 0, 0.12);
+    --texto-primario: white;
+    --texto-secundario: rgba(255, 255, 255, 0.7);
+}
+
+body.dark {
+    --fondo-overlay: rgba(0, 0, 0, 0.55);
+    --menu-bg: #1a1a1a;
+    --card-bg: rgba(0, 0, 0, 0.35);
+    --card-border: rgba(255, 255, 255, 0.1);
+    --card-shadow: rgba(0, 0, 0, 0.4);
+    --texto-primario: #fff;
+    --texto-secundario: rgba(255, 255, 255, 0.6);
+}
+
+body {
+    background-image: linear-gradient(var(--fondo-overlay), var(--fondo-overlay)), url("../img/casa_fondo.png") !important;
+    transition: background 0.3s ease;
+}
+
+.menu nav {
+    background-color: var(--menu-bg) !important;
+    transition: background 0.3s ease;
+}
+
+.disp-card {
+    background: var(--card-bg) !important;
+    border: 1px solid var(--card-border) !important;
+    box-shadow: 0 8px 32px var(--card-shadow) !important;
+    transition: background 0.3s ease;
+}
+
+.disp-header h2 {
+    color: var(--texto-primario) !important;
+}
+
+.disp-nombre {
+    color: var(--texto-primario) !important;
+}
+
+.disp-pct {
+    color: var(--texto-secundario) !important;
+}
+
+.boton-tema {
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    width: 48px;
+    height: 48px;
+    border: none;
+    border-radius: 50%;
+    background: var(--menu-bg);
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 2000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+}
+
+.boton-tema:hover {
+    transform: translateY(-2px);
 }

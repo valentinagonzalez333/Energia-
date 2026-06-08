@@ -1,5 +1,13 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap');
+
+html.dark-init body {
+    --fondo-overlay: rgba(0, 0, 0, 0.55);
+    --card-bg: rgba(0, 0, 0, 0.35);
+    --card-border: rgba(255, 255, 255, 0.1);
+    --card-shadow: rgba(0, 0, 0, 0.4);
+    --menu-bg: #1a1a1a;
+}
+
 * {
     box-sizing: border-box;
 }
@@ -229,7 +237,7 @@ body {
     color: #ff8c00;
 }
 
-.boton-ia{
+.boton-ia {
     position: fixed;
     bottom: 20px;
     right: 20px;
@@ -240,11 +248,9 @@ body {
     border: none;
     border-radius: 50%;
 
-    background: linear-gradient(
-        135deg,
-        rgba(255, 140, 0, 0.9),
-        rgba(245, 158, 11, 0.9)
-    );
+    background: linear-gradient(135deg,
+            rgba(255, 140, 0, 0.9),
+            rgba(245, 158, 11, 0.9));
 
     color: white;
     font-size: 24px;
@@ -263,12 +269,13 @@ body {
     transition: all 0.3s ease;
 }
 
-.boton-ia:hover{
+.boton-ia:hover {
     transform: translateY(-4px) scale(1.05);
     box-shadow:
         0 12px 30px rgba(255, 140, 0, 0.5),
         0 0 25px rgba(255, 140, 0, 0.35);
 }
+
 @media (max-width: 768px) {
 
     body {
@@ -340,4 +347,76 @@ body {
         bottom: 15px;
         right: 15px;
     }
+}
+
+:root {
+    --fondo-overlay: rgba(255, 255, 255, 0.55);
+    --menu-bg: white;
+    --card-bg: white;
+    --card-border: transparent;
+    --card-shadow: rgba(0, 0, 0, 0.06);
+    --texto-primario: #333;
+    --texto-secundario: #555;
+}
+
+body.dark {
+    --fondo-overlay: rgba(0, 0, 0, 0.55);
+    --menu-bg: #1a1a1a;
+    --card-bg: rgba(0, 0, 0, 0.35);
+    --card-border: rgba(255, 255, 255, 0.1);
+    --card-shadow: rgba(0, 0, 0, 0.4);
+    --texto-primario: #fff;
+    --texto-secundario: rgba(255, 255, 255, 0.7);
+}
+
+body {
+    background-image: linear-gradient(var(--fondo-overlay), var(--fondo-overlay)), url("../img/casa_fondo.png") !important;
+    transition: background 0.3s ease;
+}
+
+.menu nav {
+    background-color: var(--menu-bg) !important;
+    transition: background 0.3s ease;
+}
+
+.alerta {
+    background: var(--card-bg) !important;
+    border-left-color: inherit;
+    box-shadow: 0 2px 8px var(--card-shadow) !important;
+    transition: background 0.3s ease;
+}
+
+.alertas-header h2 {
+    color: var(--texto-primario) !important;
+}
+
+.alerta-info h3 {
+    color: var(--texto-primario) !important;
+}
+
+.alerta-info p {
+    color: var(--texto-secundario) !important;
+}
+
+.boton-tema {
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    width: 48px;
+    height: 48px;
+    border: none;
+    border-radius: 50%;
+    background: var(--menu-bg);
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 2000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+}
+
+.boton-tema:hover {
+    transform: translateY(-2px);
 }

@@ -13,6 +13,10 @@
   </head>
 
   <body>
+    <script>
+      const _t = localStorage.getItem("voltix-tema");
+      if (_t === "dark") document.body.classList.add("dark");
+    </script>
     <div class="principal">
       <img src="../img/Lodo-voltix.png" alt="" />
       <h1>Voltix</h1>
@@ -101,6 +105,8 @@
     <button class="boton-ia">
       <i class="fa-solid fa-robot"></i>
     </button>
+    <button class="boton-tema" id="boton-tema" title="Cambiar tema">🌙</button>
+    <script type="module" src="../js/tema.js"></script>
   </body>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script type="module" src="../js/estadisticas.js"></script>

@@ -1,3 +1,11 @@
+html.dark-init body {
+    --fondo-overlay: rgba(0, 0, 0, 0.55);
+    --card-bg: rgba(0, 0, 0, 0.35);
+    --card-border: rgba(255, 255, 255, 0.1);
+    --card-shadow: rgba(0, 0, 0, 0.4);
+    --menu-bg: #1a1a1a;
+}
+
 * {
     box-sizing: border-box;
 }
@@ -67,7 +75,7 @@ body {
 .menu nav {
     background-color: white;
     width: 60px;
-    height:580px;
+    height: 580px;
     border-radius: 20px;
 }
 
@@ -218,7 +226,7 @@ body {
     align-items: center;
     text-align: center;
     color: #d97706;
-    background: linear-gradient( 135deg,#fff4e6,#ffe8cc);
+    background: linear-gradient(135deg, #fff4e6, #ffe8cc);
 }
 
 .right h2 {
@@ -271,7 +279,7 @@ body {
 .right,
 .right_2,
 .seccion-grafica {
-    
+
     backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
     border: 1px solid rgba(255, 255, 255, 0.22);
@@ -346,7 +354,7 @@ body {
 }
 
 
-.boton-ia{
+.boton-ia {
     position: fixed;
     bottom: 20px;
     right: 20px;
@@ -357,11 +365,9 @@ body {
     border: none;
     border-radius: 50%;
 
-    background: linear-gradient(
-        135deg,
-        rgba(255, 140, 0, 0.9),
-        rgba(245, 158, 11, 0.9)
-    );
+    background: linear-gradient(135deg,
+            rgba(255, 140, 0, 0.9),
+            rgba(245, 158, 11, 0.9));
 
     color: white;
     font-size: 24px;
@@ -380,12 +386,13 @@ body {
     transition: all 0.3s ease;
 }
 
-.boton-ia:hover{
+.boton-ia:hover {
     transform: translateY(-4px) scale(1.05);
     box-shadow:
         0 12px 30px rgba(255, 140, 0, 0.5),
         0 0 25px rgba(255, 140, 0, 0.35);
 }
+
 @media (max-width: 768px) {
 
     body {
@@ -417,7 +424,8 @@ body {
     }
 
     .fila-cards {
-        grid-template-columns: 1fr 1fr;  /* mantén 2 columnas, caben bien */
+        grid-template-columns: 1fr 1fr;
+        /* mantén 2 columnas, caben bien */
     }
 
     .card {
@@ -429,12 +437,14 @@ body {
 
     .columna-centro {
         width: 100%;
-        display: block;       /* no lo ocultes */
+        display: block;
+        /* no lo ocultes */
     }
 
     .cards-right {
         width: 100%;
-        flex-direction: row;  /* right y right_2 lado a lado */
+        flex-direction: row;
+        /* right y right_2 lado a lado */
     }
 
     .right,
@@ -497,4 +507,67 @@ body {
         bottom: 15px;
         right: 15px;
     }
+}
+
+:root {
+    --fondo-overlay: rgba(255, 255, 255, 0.18);
+    --card-bg: rgba(255, 255, 255, 0.15);
+    --card-border: rgba(255, 255, 255, 0.2);
+    --card-shadow: rgba(0, 0, 0, 0.12);
+    --menu-bg: white;
+    --texto-primario: #fff;
+    --texto-secundario: rgba(255, 255, 255, 0.75);
+}
+
+body.dark {
+    --fondo-overlay: rgba(0, 0, 0, 0.55);
+    --card-bg: rgba(0, 0, 0, 0.35);
+    --card-border: rgba(255, 255, 255, 0.1);
+    --card-shadow: rgba(0, 0, 0, 0.4);
+    --menu-bg: #1a1a1a;
+    --texto-primario: #fff;
+    --texto-secundario: rgba(255, 255, 255, 0.7);
+}
+
+body {
+    background-image: linear-gradient(var(--fondo-overlay), var(--fondo-overlay)), url("../img/casa_fondo.png") !important;
+    transition: background 0.3s ease;
+}
+
+.menu nav {
+    background-color: var(--menu-bg) !important;
+    transition: background 0.3s ease;
+}
+
+.card,
+.seccion-grafica,
+.right,
+.right_2 {
+    background: var(--card-bg) !important;
+    border: 1px solid var(--card-border) !important;
+    box-shadow: 0 8px 32px var(--card-shadow) !important;
+    transition: background 0.3s ease;
+}
+
+.boton-tema {
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    width: 48px;
+    height: 48px;
+    border: none;
+    border-radius: 50%;
+    background: var(--menu-bg);
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 2000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+}
+
+.boton-tema:hover {
+    transform: translateY(-2px);
 }

@@ -1,3 +1,11 @@
+html.dark-init body {
+    --fondo-overlay: rgba(0, 0, 0, 0.55);
+    --card-bg: rgba(0, 0, 0, 0.35);
+    --card-border: rgba(255, 255, 255, 0.1);
+    --card-shadow: rgba(0, 0, 0, 0.4);
+    --menu-bg: #1a1a1a;
+}
+
 * {
     box-sizing: border-box;
 }
@@ -5,13 +13,13 @@
 body {
     margin: 0;
     width: 100vw;
-    min-height: 100vh;        
+    min-height: 100vh;
     background-image: linear-gradient(rgba(255, 255, 255, 0.18),
             rgba(255, 255, 255, 0.18)), url("../img/casa_fondo.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center 85%;
-    overflow-x: hidden;     
+    overflow-x: hidden;
 }
 
 .contenedor {
@@ -185,7 +193,7 @@ tr:last-child td {
     display: none;
 }
 
-.boton-ia{
+.boton-ia {
     position: fixed;
     bottom: 20px;
     right: 20px;
@@ -196,11 +204,9 @@ tr:last-child td {
     border: none;
     border-radius: 50%;
 
-    background: linear-gradient(
-        135deg,
-        rgba(255, 140, 0, 0.9),
-        rgba(245, 158, 11, 0.9)
-    );
+    background: linear-gradient(135deg,
+            rgba(255, 140, 0, 0.9),
+            rgba(245, 158, 11, 0.9));
 
     color: white;
     font-size: 24px;
@@ -219,7 +225,7 @@ tr:last-child td {
     transition: all 0.3s ease;
 }
 
-.boton-ia:hover{
+.boton-ia:hover {
     transform: translateY(-4px) scale(1.05);
     box-shadow:
         0 12px 30px rgba(255, 140, 0, 0.5),
@@ -295,7 +301,7 @@ tr:last-child td {
     }
 
     .contenedor {
-        flex-direction: column;   
+        flex-direction: column;
     }
 
     .principal img {
@@ -322,16 +328,17 @@ tr:last-child td {
 
     .usuarios-header {
         flex-direction: column;
-        align-items: stretch;     
+        align-items: stretch;
         gap: 8px;
     }
 
     table {
         width: 100%;
-        min-width: unset;        
+        min-width: unset;
     }
 
-    th, td {
+    th,
+    td {
         padding: 10px;
         font-size: 13px;
     }
@@ -380,4 +387,80 @@ tr:last-child td {
         bottom: 15px;
         right: 15px;
     }
+}
+
+:root {
+    --fondo-overlay: rgba(255, 255, 255, 0.18);
+    --menu-bg: white;
+    --card-bg: rgba(255, 255, 255, 0.15);
+    --card-border: rgba(255, 255, 255, 0.2);
+    --card-shadow: rgba(0, 0, 0, 0.12);
+    --texto-primario: white;
+    --texto-secundario: rgba(255, 255, 255, 0.8);
+    --tabla-bg: rgba(255, 255, 255, 0.1);
+    --tabla-border: rgba(255, 255, 255, 0.1);
+}
+
+body.dark {
+    --fondo-overlay: rgba(0, 0, 0, 0.55);
+    --menu-bg: #1a1a1a;
+    --card-bg: rgba(0, 0, 0, 0.35);
+    --card-border: rgba(255, 255, 255, 0.1);
+    --card-shadow: rgba(0, 0, 0, 0.4);
+    --texto-primario: #fff;
+    --texto-secundario: rgba(255, 255, 255, 0.7);
+    --tabla-bg: rgba(0, 0, 0, 0.2);
+    --tabla-border: rgba(255, 255, 255, 0.05);
+}
+
+body {
+    background-image: linear-gradient(var(--fondo-overlay), var(--fondo-overlay)), url("../img/casa_fondo.png") !important;
+    transition: background 0.3s ease;
+}
+
+.menu nav {
+    background-color: var(--menu-bg) !important;
+    transition: background 0.3s ease;
+}
+
+.tabla-wrap {
+    background: var(--card-bg) !important;
+    border: 1px solid var(--card-border) !important;
+    transition: background 0.3s ease;
+}
+
+.tabla-wrap h2 {
+    color: var(--texto-primario) !important;
+}
+
+table {
+    background: var(--tabla-bg) !important;
+}
+
+td {
+    color: var(--texto-secundario) !important;
+    border-bottom: 1px solid var(--tabla-border) !important;
+}
+
+.boton-tema {
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    width: 48px;
+    height: 48px;
+    border: none;
+    border-radius: 50%;
+    background: var(--menu-bg);
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 2000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+}
+
+.boton-tema:hover {
+    transform: translateY(-2px);
 }

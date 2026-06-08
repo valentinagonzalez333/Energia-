@@ -1,5 +1,41 @@
+html.dark-init body {
+    --fondo-overlay: rgba(0, 0, 0, 0.55);
+    --card-bg: rgba(0, 0, 0, 0.35);
+    --card-border: rgba(255, 255, 255, 0.1);
+    --card-shadow: rgba(0, 0, 0, 0.4);
+    --menu-bg: #1a1a1a;
+}
+
 * {
     box-sizing: border-box;
+}
+
+:root {
+    --fondo-overlay: rgba(255, 255, 255, 0.18);
+    --card-bg: rgba(255, 255, 255, 0.15);
+    --card-border: rgba(255, 255, 255, 0.2);
+    --card-shadow: rgba(0, 0, 0, 0.12);
+    --card-hover-bg: rgba(255, 255, 255, 0.22);
+    --texto-primario: #fff;
+    --texto-secundario: rgba(255, 255, 255, 0.75);
+    --texto-span: rgba(255, 255, 255, 0.65);
+    --menu-bg: white;
+    --menu-icon: #ff8c00;
+    --principal-h1: white;
+}
+
+body.dark {
+    --fondo-overlay: rgba(0, 0, 0, 0.55);
+    --card-bg: rgba(0, 0, 0, 0.35);
+    --card-border: rgba(255, 255, 255, 0.1);
+    --card-shadow: rgba(0, 0, 0, 0.4);
+    --card-hover-bg: rgba(0, 0, 0, 0.5);
+    --texto-primario: #fff;
+    --texto-secundario: rgba(255, 255, 255, 0.7);
+    --texto-span: rgba(255, 255, 255, 0.5);
+    --menu-bg: #1a1a1a;
+    --menu-icon: #ff8c00;
+    --principal-h1: white;
 }
 
 canvas {
@@ -10,13 +46,14 @@ body {
     margin: 0;
     width: 100vw;
     min-height: 100vh;
-    background-image: linear-gradient(rgba(255, 255, 255, 0.18),
-            rgba(255, 255, 255, 0.18)), url("../img/casa_fondo.png");
+    background-image: linear-gradient(var(--fondo-overlay), var(--fondo-overlay)), url("../img/casa_fondo.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center 85%;
     overflow-x: hidden;
+    transition: background 0.3s ease;
 }
+
 .contenedor {
     width: 100%;
     display: flex;
@@ -35,12 +72,10 @@ body {
 
 .principal h1 {
     font-family: 'Orbitron', sans-serif;
-    color: white;
+    color: var(--principal-h1);
     font-size: 1.5em;
     margin-top: 28px;
 }
-
-
 
 .menu {
     display: flex;
@@ -62,13 +97,13 @@ body {
 }
 
 .menu nav {
-    background-color: white;
+    background-color: var(--menu-bg);
     width: 60px;
     height: 580px;
     border-radius: 20px;
+    transition: background 0.3s ease;
 }
 
-/* lista del menu */
 .menu ul {
     margin-top: 20px;
     list-style: none;
@@ -78,15 +113,13 @@ body {
     margin-bottom: 30px;
 }
 
-
 .menu i {
     margin-right: 10px;
-    color: #ff8c00;
+    color: var(--menu-icon);
     font-size: 18px;
     padding: 3px;
     border-radius: 17px;
 }
-
 
 .activo i {
     background: linear-gradient(135deg, rgba(255, 140, 0, 0.8), rgba(245, 158, 11, 0.8));
@@ -97,16 +130,13 @@ body {
 }
 
 .activo i:hover {
-    margin-right: 10px;
     color: #ff8c00;
-    font-size: 18px;
     padding: 7px;
     border-radius: 17px;
     background: white;
 }
 
 .menu i:hover {
-
     color: rgba(255, 140, 0, 0.18);
     box-shadow: 0 0 35px rgba(255, 140, 0, 0.35);
     transition: color 0.3s ease;
@@ -121,40 +151,34 @@ body {
     padding: 16px 20px 16px 0;
 }
 
-
-
 .card_1 {
     padding: 20px 28px;
     border-radius: 20px;
     font-family: 'Poppins', sans-serif;
-    margin-right: 20px;    
+    margin-right: 20px;
 }
 
 .card_1 h2 {
     font-size: 20px;
     font-weight: 700;
-    color: #fff;
+    color: var(--texto-primario);
     margin: 0 0 8px;
 }
 
 .card_1 p {
     font-size: 22px;
     font-weight: 700;
-    color: #ffffff;
+    color: var(--texto-primario);
     margin: 6px 0 0;
-    text-shadow:
-        0 0 10px rgba(242, 241, 239, 0.7),
-        0 0 20px rgba(255, 140, 0, 0.4);
+    text-shadow: 0 0 10px rgba(242, 241, 239, 0.7), 0 0 20px rgba(255, 140, 0, 0.4);
 }
 
 .card_1 .sub {
     font-size: 14px;
     font-weight: 400;
-    color: rgba(255, 255, 255, 0.75);
+    color: var(--texto-secundario);
     margin-top: 4px;
 }
-
-
 
 .card_2 {
     padding: 16px 20px;
@@ -164,15 +188,12 @@ body {
     width: 420px;
 }
 
-
-
 .infos {
     display: flex;
     justify-content: flex-end;
     align-items: stretch;
     gap: 16px;
     margin-right: 20px;
-    width: auto;
 }
 
 .info {
@@ -180,13 +201,13 @@ body {
     padding: 16px 18px;
     border-radius: 20px;
     font-family: 'Poppins', sans-serif;
-    color: white;
+    color: var(--texto-primario);
 }
 
 .info h2 {
     font-size: 14px;
     font-weight: 600;
-    color: #f8fafc;
+    color: var(--texto-primario);
     margin: 0 0 6px;
 }
 
@@ -194,40 +215,33 @@ body {
     font-size: 22px;
     font-weight: 700;
     margin: 4px 0;
-    color: #ffffff;
+    color: var(--texto-primario);
     text-shadow: 0 0 10px rgba(255, 140, 0, 0.35);
 }
 
 .info span {
     font-size: 11px;
-    color: rgba(255, 255, 255, 0.65);
+    color: var(--texto-span);
 }
-
-
 
 .card_1,
 .card_2,
 .info {
-    background: rgba(255, 255, 255, 0.15);
+    background: var(--card-bg);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+    border: 1px solid var(--card-border);
+    box-shadow: 0 8px 32px var(--card-shadow);
+    transition: background 0.3s ease, box-shadow 0.3s ease;
 }
-
-
 
 .card_1:hover,
 .card_2:hover,
 .info:hover {
     transform: translateY(-4px);
-    box-shadow:
-        0 12px 38px rgba(0, 0, 0, 0.14),
-        0 0 18px rgba(255, 170, 0, 0.12);
-    background: rgba(255, 255, 255, 0.22);
+    box-shadow: 0 12px 38px var(--card-shadow), 0 0 18px rgba(255, 170, 0, 0.12);
+    background: var(--card-hover-bg);
 }
-
-
 
 @keyframes floatIn {
     from {
@@ -248,10 +262,7 @@ body {
 .info {
     animation: floatIn 0.8s ease forwards;
     opacity: 0;
-    transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease,
-        background 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
 }
 
 .card_1 {
@@ -270,55 +281,58 @@ body {
     animation-delay: 0.65s;
 }
 
-
 .hamburguesa {
     display: none;
 }
 
-
-.boton-ia{
+.boton-ia {
     position: fixed;
     bottom: 20px;
     right: 20px;
-
     width: 60px;
     height: 60px;
-
     border: none;
     border-radius: 50%;
-
-    background: linear-gradient(
-        135deg,
-        rgba(255, 140, 0, 0.9),
-        rgba(245, 158, 11, 0.9)
-    );
-
+    background: linear-gradient(135deg, rgba(255, 140, 0, 0.9), rgba(245, 158, 11, 0.9));
     color: white;
     font-size: 24px;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     cursor: pointer;
     z-index: 2000;
-
-    box-shadow:
-        0 8px 25px rgba(255, 140, 0, 0.4),
-        0 0 20px rgba(255, 140, 0, 0.25);
-
+    box-shadow: 0 8px 25px rgba(255, 140, 0, 0.4), 0 0 20px rgba(255, 140, 0, 0.25);
     transition: all 0.3s ease;
 }
 
-.boton-ia:hover{
+.boton-ia:hover {
     transform: translateY(-4px) scale(1.05);
-    box-shadow:
-        0 12px 30px rgba(255, 140, 0, 0.5),
-        0 0 25px rgba(255, 140, 0, 0.35);
+}
+
+.boton-tema {
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    width: 48px;
+    height: 48px;
+    border: none;
+    border-radius: 50%;
+    background: var(--menu-bg);
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 2000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+}
+
+.boton-tema:hover {
+    transform: translateY(-2px);
 }
 
 @media (max-width: 768px) {
-
     body {
         overflow-y: auto;
     }
@@ -428,5 +442,13 @@ body {
         font-size: 20px;
         bottom: 15px;
         right: 15px;
+    }
+
+    .boton-tema {
+        bottom: 80px;
+        right: 15px;
+        width: 42px;
+        height: 42px;
+        font-size: 18px;
     }
 }
