@@ -374,29 +374,40 @@ body {
     }
 
     .lista-dispositivos {
-        grid-template-columns: 1fr 1fr;
-        gap: 10px;
+        grid-template-columns: 1fr;
+        gap: 8px;
     }
 
     .disp-card {
-        padding: 12px;
+        padding: 10px 14px;
         gap: 10px;
+        border-radius: 12px;
     }
 
     .disp-icono {
-        font-size: 22px;
+        font-size: 20px;
     }
 
     .disp-nombre {
         font-size: 13px;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        max-width: 80px;
+        white-space: normal;
+        overflow: visible;
+        text-overflow: unset;
+        max-width: unset;
     }
 
     .disp-consumo {
-        font-size: 13px;
+        font-size: 12px;
+        white-space: nowrap;
+    }
+
+    .disp-nombre-fila {
+        flex-wrap: nowrap;
+        gap: 6px;
+    }
+
+    .disp-pct {
+        font-size: 10px;
     }
 
     .boton-tema {
