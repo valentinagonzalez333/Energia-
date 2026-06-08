@@ -18,9 +18,12 @@ export function proteger() {
 }
 
 export function cerrarSesion() {
-  import("https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js")
-    .then(({ signOut }) => signOut(auth))
-    .then(() => window.location.replace("login.html"));
+    import("https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js")
+        .then(({ signOut }) => signOut(auth))
+        .then(() => {
+            sessionStorage.removeItem("voltix-chat");
+            window.location.replace("login.html");
+        });
 }
 
 window.cerrarSesion = cerrarSesion;

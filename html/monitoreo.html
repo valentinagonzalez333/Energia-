@@ -1,103 +1,113 @@
 <!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Monitoreo</title>
+    <link rel="icon" type="image/x-icon" href="../img/Lodo-voltix.png" />
+    <link rel="stylesheet" href="../css/monitoreo.css" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Monitoreo</title>
-  <link rel="icon" type="image/x-icon" href="../img/Lodo-voltix.png" />
-  <link rel="stylesheet" href="../css/monitoreo.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+  </head>
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-</head>
-
-<body>
-  <div class="principal">
-    <img src="../img/Lodo-voltix.png" alt="" />
-    <h1>Voltix</h1>
-  </div>
-  <button class="hamburguesa" id="hamburguesa">
-    <i class="fa-solid fa-bars"></i>
-  </button>
-
-  <div class="contenedor">
-    <div class="menu">
-      <nav>
-        <ul>
-          <li>
-            <a href="panel.html"><i class="fa-solid fa-chart-line"></i></a>
-          </li>
-          <li>
-            <a href="monitoreo.html" class="activo"><i class="fa-solid fa-bolt"></i></a>
-          </li>
-          <li>
-            <a href="estadisticas.html"><i class="fa-solid fa-chart-pie"></i></a>
-          </li>
-          <li>
-            <a href="usuarios.html"><i class="fa-solid fa-users"></i></a>
-          </li>
-          <li>
-            <a href="alertas.html"><i class="fa-solid fa-triangle-exclamation"></i></a>
-          </li>
-          <li>
-            <a href="login.html" id="logout" onclick="cerrarSesion()"><i class="fa-solid fa-right-from-bracket"></i></a>
-          </li>
-        </ul>
-      </nav>
+  <body>
+    <div class="principal">
+      <img src="../img/Lodo-voltix.png" alt="" />
+      <h1>Voltix</h1>
     </div>
+    <button class="hamburguesa" id="hamburguesa">
+      <i class="fa-solid fa-bars"></i>
+    </button>
 
-    <div class="cards">
-      <div class="columna-izquierda">
-        <div class="fila-cards">
-          <div class="card glass">
-            <h2>Potencia Actual</h2>
-            <h3></h3>
-            <p>0kW</p>
+    <div class="contenedor">
+      <div class="menu">
+        <nav>
+          <ul>
+            <li>
+              <a href="panel.html"><i class="fa-solid fa-chart-line"></i></a>
+            </li>
+            <li>
+              <a href="monitoreo.html" class="activo"
+                ><i class="fa-solid fa-bolt"></i
+              ></a>
+            </li>
+            <li>
+              <a href="estadisticas.html"
+                ><i class="fa-solid fa-chart-pie"></i
+              ></a>
+            </li>
+            <li>
+              <a href="usuarios.html"><i class="fa-solid fa-users"></i></a>
+            </li>
+            <li>
+              <a href="alertas.html"
+                ><i class="fa-solid fa-triangle-exclamation"></i
+              ></a>
+            </li>
+            <li>
+              <a href="login.html" id="logout" onclick="cerrarSesion()"
+                ><i class="fa-solid fa-right-from-bracket"></i
+              ></a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="cards">
+        <div class="columna-izquierda">
+          <div class="fila-cards">
+            <div class="card glass">
+              <h2>Potencia Actual</h2>
+              <h3></h3>
+              <p>0kW</p>
+            </div>
+            <div class="card glass card-1">
+              <h2>Consumo Hoy</h2>
+              <h3></h3>
+              <p>0 kWh</p>
+            </div>
+            <div class="card glass">
+              <h2>Factor Potencia</h2>
+              <h3></h3>
+              <p>0</p>
+            </div>
+            <div class="card glass">
+              <h2>Desviación Estándar</h2>
+              <h3></h3>
+              <p>0kW</p>
+            </div>
           </div>
-          <div class="card glass card-1">
-            <h2>Consumo Hoy</h2>
-            <h3></h3>
+
+          <div class="seccion-grafica glass">
+            <h3>Consumo por hora</h3>
+            <canvas id="graficaConsumo"></canvas>
+          </div>
+        </div>
+
+        <div class="columna-centro"></div>
+
+        <div class="cards-right">
+          <div class="right glass">
+            <h2>Costo</h2>
+            <p>Aproximado</p>
+            <h3>$0</h3>
+            <p>COP</p>
+          </div>
+          <div class="right_2 glass">
+            <h2>Promedio</h2>
             <p>0 kWh</p>
           </div>
-          <div class="card glass">
-            <h2>Factor Potencia</h2>
-            <h3></h3>
-            <p>0</p>
-          </div>
-          <div class="card glass">
-            <h2>Desviación Estándar</h2>
-            <h3></h3>
-            <p>0kW</p>
-          </div>
-        </div>
-
-        <div class="seccion-grafica glass">
-          <h3>Consumo por hora</h3>
-          <canvas id="graficaConsumo"></canvas>
-        </div>
-      </div>
-
-      <div class="columna-centro"></div>
-
-      <div class="cards-right">
-        <div class="right glass">
-          <h2>Costo</h2>
-          <p>Aproximado</p>
-          <h3>$0</h3>
-          <p>COP</p>
-        </div>
-        <div class="right_2 glass">
-          <h2>Promedio</h2>
-          <p>0 kWh</p>
         </div>
       </div>
     </div>
-  </div>
-  <button class="boton-ia">
-    <i class="fa-solid fa-robot"></i>
-</button>
-</body>
-<script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
-<script type="module" src="../js/monitoreo.js" defer></script>
-
+    <button class="boton-ia">
+      <i class="fa-solid fa-robot"></i>
+    </button>
+  </body>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+  <script type="module" src="../js/monitoreo.js" defer></script>
+  <script type="module" src="../js/chat-ai.js "></script>
 </html>

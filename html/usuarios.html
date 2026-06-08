@@ -1,86 +1,103 @@
 <!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Usuarios</title>
+    <link rel="icon" type="image/x-icon" href="../img/Lodo-voltix.png" />
+    <link rel="stylesheet" href="../css/usuarios.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap"
-    rel="stylesheet" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Usuarios</title>
-  <link rel="icon" type="image/x-icon" href="../img/Lodo-voltix.png" />
-  <link rel="stylesheet" href="../css/usuarios.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-</head>
-
-<body>
-  <div class="principal">
-    <img src="../img/Lodo-voltix.png" alt="" />
-    <h1>Voltix</h1>
-  </div>
-  <button class="hamburguesa" id="hamburguesa">
-    <i class="fa-solid fa-bars"></i>
-  </button>
-  <div class="contenedor">
-    <div class="menu">
-      <nav>
-        <ul>
-          <li>
-            <a href="panel.html"><i class="fa-solid fa-chart-line"></i></a>
-          </li>
-          <li>
-            <a href="monitoreo.html"><i class="fa-solid fa-bolt"></i></a>
-          </li>
-          <li>
-            <a href="estadisticas.html"><i class="fa-solid fa-chart-pie"></i></a>
-          </li>
-          <li>
-            <a href="usuarios.html" class="activo"><i class="fa-solid fa-users"></i></a>
-          </li>
-          <li>
-            <a href="alertas.html">
-              <i class="fa-solid fa-triangle-exclamation"></i></a>
-          </li>
-          <li>
-            <a href="login.html" id="logout" onclick="cerrarSesion()"><i class="fa-solid fa-right-from-bracket"></i></a>
-          </li>
-        </ul>
-      </nav>
+  <body>
+    <div class="principal">
+      <img src="../img/Lodo-voltix.png" alt="" />
+      <h1>Voltix</h1>
     </div>
-   <div class="contenido">
-  <div class="tabla-wrap">
-
-    <h2 class="seccion-titulo">Usuarios</h2>
-    <p class="seccion-desc">Consulta y gestiona todos los usuarios registrados en la plataforma Voltix. Desde aquí puedes ver quién tiene acceso al sistema de monitoreo energético.</p>
-
-    <div class="usuarios-header">
-      <div class="search-wrap">
-        <i class="fa-solid fa-magnifying-glass search-icon"></i>
-        <input type="text" id="buscador" class="buscador" placeholder="Buscar usuario..." />
+    <button class="hamburguesa" id="hamburguesa">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+    <div class="contenedor">
+      <div class="menu">
+        <nav>
+          <ul>
+            <li>
+              <a href="panel.html"><i class="fa-solid fa-chart-line"></i></a>
+            </li>
+            <li>
+              <a href="monitoreo.html"><i class="fa-solid fa-bolt"></i></a>
+            </li>
+            <li>
+              <a href="estadisticas.html"
+                ><i class="fa-solid fa-chart-pie"></i
+              ></a>
+            </li>
+            <li>
+              <a href="usuarios.html" class="activo"
+                ><i class="fa-solid fa-users"></i
+              ></a>
+            </li>
+            <li>
+              <a href="alertas.html">
+                <i class="fa-solid fa-triangle-exclamation"></i
+              ></a>
+            </li>
+            <li>
+              <a href="login.html" id="logout" onclick="cerrarSesion()"
+                ><i class="fa-solid fa-right-from-bracket"></i
+              ></a>
+            </li>
+          </ul>
+        </nav>
       </div>
-      <span id="total-usuarios" class="badge-usuarios">0 usuarios</span>
+      <div class="contenido">
+        <div class="tabla-wrap">
+          <h2 class="seccion-titulo">Usuarios</h2>
+          <p class="seccion-desc">
+            Consulta y gestiona todos los usuarios registrados en la plataforma
+            Voltix. Desde aquí puedes ver quién tiene acceso al sistema de
+            monitoreo energético.
+          </p>
+
+          <div class="usuarios-header">
+            <div class="search-wrap">
+              <i class="fa-solid fa-magnifying-glass search-icon"></i>
+              <input
+                type="text"
+                id="buscador"
+                class="buscador"
+                placeholder="Buscar usuario..."
+              />
+            </div>
+            <span id="total-usuarios" class="badge-usuarios">0 usuarios</span>
+          </div>
+
+          <table>
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Usuario</th>
+                <th>Fecha de registro</th>
+              </tr>
+            </thead>
+            <tbody id="lista-usuarios"></tbody>
+          </table>
+          <p id="sin-usuarios">No hay usuarios registrados.</p>
+        </div>
+      </div>
     </div>
-
-    <table>
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>Usuario</th>
-          <th>Fecha de registro</th>
-        </tr>
-      </thead>
-      <tbody id="lista-usuarios"></tbody>
-    </table>
-    <p id="sin-usuarios">No hay usuarios registrados.</p>
-
-  </div>
-</div>
-  </div>
-  <button class="boton-ia">
-    <i class="fa-solid fa-robot"></i>
-</button>
-</body>
-<script src="../js/script.js" defer></script>
-<script type="module" src="../js/usuarios.js"></script>
-
+    <button class="boton-ia">
+      <i class="fa-solid fa-robot"></i>
+    </button>
+  </body>
+  <script src="../js/script.js" defer></script>
+  <script type="module" src="../js/usuarios.js"></script>
+  <script type="module" src="../js/chat-ai.js "></script>
 </html>
