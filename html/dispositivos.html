@@ -1,25 +1,25 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Alertas</title>
+    <title>Dispositivos</title>
     <link rel="icon" type="image/x-icon" href="../img/Lodo-voltix.png" />
-    <link rel="stylesheet" href="../css/alertas.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/dispositivos.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
   </head>
-
   <body>
     <div class="principal">
       <img src="../img/Lodo-voltix.png" alt="" />
       <h1>Voltix</h1>
     </div>
-    <button class="hamburguesa" id="hamburguesa">
-      <i class="fa-solid fa-bars"></i>
-    </button>
 
     <div class="contenedor">
       <div class="menu">
@@ -37,18 +37,20 @@
               ></a>
             </li>
             <li>
-              <a href="dispositivos.html"><i class="fa-solid fa-plug"></i></a>
+              <a href="dispositivos.html" class="activo"
+                ><i class="fa-solid fa-plug"></i
+              ></a>
             </li>
             <li>
               <a href="usuarios.html"><i class="fa-solid fa-users"></i></a>
             </li>
             <li>
-              <a href="alertas.html" class="activo"
+              <a href="alertas.html"
                 ><i class="fa-solid fa-triangle-exclamation"></i
               ></a>
             </li>
             <li>
-              <a href="login.html" id="logout" onclick="cerrarSesion()"
+              <a href="login.html" onclick="cerrarSesion()"
                 ><i class="fa-solid fa-right-from-bracket"></i
               ></a>
             </li>
@@ -56,21 +58,17 @@
         </nav>
       </div>
 
-      <div class="contenido-alertas">
-        <div class="alertas-header">
-          <h2>Centro de Alertas</h2>
-          <span id="total-alertas" class="badge">0 activas</span>
+      <div class="contenido-dispositivos">
+        <div class="disp-header">
+          <h2>Dispositivos del hogar</h2>
+          <span id="consumo-total-disp" class="badge-disp">Cargando...</span>
         </div>
-        <div id="lista-alertas" class="lista-alertas">
-          <p class="sin-alertas">Cargando alertas...</p>
-        </div>
+        <div id="lista-dispositivos" class="lista-dispositivos"></div>
       </div>
     </div>
-    <button class="boton-ia">
-      <i class="fa-solid fa-robot"></i>
-    </button>
+    <button class="boton-ia"><i class="fa-solid fa-robot"></i></button>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script type="module" src="../js/dispositivos.js"></script>
+    <script type="module" src="../js/chat-ai.js"></script>
   </body>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
-  <script type="module" src="../js/alertas.js"></script>
-  <script type="module" src="../js/chat-ai.js"></script>
 </html>

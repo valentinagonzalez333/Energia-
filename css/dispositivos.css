@@ -6,7 +6,9 @@ body {
     margin: 0;
     width: 100vw;
     height: 100vh;
-    background-color: #f1f5f9;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.18)), url("../img/casa_fondo.png");
+    background-size: cover;
+    background-repeat: no-repeat;
     background-position: center 85%;
     overflow: hidden;
 }
@@ -41,7 +43,6 @@ body {
     margin-left: 30px;
 }
 
-/*  enlaces del menu */
 .menu a {
     align-items: center;
     justify-content: center;
@@ -57,11 +58,10 @@ body {
 .menu nav {
     background-color: white;
     width: 60px;
-    height:580px;
+    height: 580px;
     border-radius: 20px;
 }
 
-/* lista del menu */
 .menu ul {
     margin-top: 20px;
     list-style: none;
@@ -71,7 +71,6 @@ body {
     margin-bottom: 30px;
 }
 
-
 .menu i {
     margin-right: 10px;
     color: #ff8c00;
@@ -79,7 +78,6 @@ body {
     padding: 3px;
     border-radius: 17px;
 }
-
 
 .activo i {
     background: linear-gradient(135deg, rgba(255, 140, 0, 0.8), rgba(245, 158, 11, 0.8));
@@ -90,7 +88,6 @@ body {
 }
 
 .activo i:hover {
-    margin-right: 10px;
     color: #ff8c00;
     font-size: 18px;
     padding: 7px;
@@ -99,8 +96,130 @@ body {
 }
 
 .menu i:hover {
-
     color: rgba(255, 140, 0, 0.18);
     box-shadow: 0 0 35px rgba(255, 140, 0, 0.35);
     transition: color 0.3s ease;
+}
+
+.contenido-dispositivos {
+    padding: 30px;
+    width: 100%;
+    overflow-y: auto;
+    height: calc(100vh - 120px);
+}
+
+.disp-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.disp-header h2 {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    margin: 0;
+}
+
+.badge-disp {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    background: rgba(255, 140, 0, 0.15);
+    color: #ff8c00;
+}
+
+.lista-dispositivos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+}
+
+.disp-card {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+}
+
+.disp-icono {
+    font-size: 28px;
+}
+
+.disp-info {
+    flex: 1;
+}
+
+.disp-nombre-fila {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+}
+
+.disp-nombre {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: white;
+}
+
+.disp-consumo {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: #ff8c00;
+}
+
+.disp-barra-wrap {
+    background: #f1f5f9;
+    border-radius: 8px;
+    height: 6px;
+    width: 100%;
+    margin-bottom: 4px;
+}
+
+.disp-barra {
+    background: linear-gradient(135deg, rgba(255, 140, 0, 0.8), rgba(245, 158, 11, 0.8));
+    border-radius: 8px;
+    height: 6px;
+    transition: width 0.5s ease;
+}
+
+.disp-pct {
+    font-family: 'Poppins', sans-serif;
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.boton-ia {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    border: none;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(255, 140, 0, 0.9), rgba(245, 158, 11, 0.9));
+    color: white;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 2000;
+    box-shadow: 0 8px 25px rgba(255, 140, 0, 0.4);
+    transition: all 0.3s ease;
+}
+
+.boton-ia:hover {
+    transform: translateY(-4px) scale(1.05);
 }

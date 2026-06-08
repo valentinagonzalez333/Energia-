@@ -95,8 +95,8 @@ const estilos = `
 }
 
 .chat-msg.modelo span {
-    background: rgba(255,255,255,0.2);
-    color: white;
+    background: rgba(100,100,100,0.15);
+    color: #333;
 }
 
 .chat-msg.cargando span {
@@ -104,11 +104,16 @@ const estilos = `
     font-style: italic;
 }
 
-.chat-footer {
-    display: flex;
-    gap: 8px;
-    padding: 12px 14px;
-    border-top: 1px solid rgba(255,255,255,0.15);
+.chat-footer input {
+    flex: 1;
+    padding: 10px 14px;
+    border-radius: 12px;
+    border: 1px solid rgba(0,0,0,0.15);
+    background: rgba(255,255,255,0.8);
+    color: #333;
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    outline: none;
 }
 
 .chat-footer input {
@@ -124,7 +129,7 @@ const estilos = `
 }
 
 .chat-footer input::placeholder {
-    color: rgba(255,255,255,0.5);
+    color: rgba(0,0,0,0.4);
 }
 
 .chat-footer button {
@@ -191,15 +196,37 @@ async function obtenerContexto() {
     const snap = await getDoc(doc(db, "datos-energia", "actual"));
     if (!snap.exists()) return "";
     const d = snap.data();
+
+    const DISPOSITIVOS = [
+      { nombre: "Nevera", porcentaje: 0.2 },
+      { nombre: "Aire acondicionado", porcentaje: 0.25 },
+      { nombre: "Lavadora", porcentaje: 0.12 },
+      { nombre: "Television", porcentaje: 0.08 },
+      { nombre: "Computador", porcentaje: 0.07 },
+      { nombre: "Iluminación", porcentaje: 0.1 },
+      { nombre: "Microondas", porcentaje: 0.06 },
+      { nombre: "Router WiFi", porcentaje: 0.04 },
+      { nombre: "Cargadores", porcentaje: 0.05 },
+      { nombre: "Otros", porcentaje: 0.03 },
+    ];
+
+    const dispositivosStr = DISPOSITIVOS.map(
+      (dev) =>
+        `  - ${dev.nombre}: ${(d.potencia * dev.porcentaje).toFixed(3)} kW (${Math.round(dev.porcentaje * 100)}%)`,
+    ).join("\n");
+
     return `\n\n[Datos actuales del sistema Voltix:
-- Potencia actual: ${d.potencia} kW
+- Potencia actual total: ${d.potencia} kW
 - Consumo hoy: ${d.consumoHoy} kWh
 - Costo estimado hoy: $${d.costo} COP
 - CO₂ evitado hoy: ${d.co2} kg
 - Factor de potencia: ${d.factorPotencia}
 - Desviación estándar: ${d.desviacion} kW
 - Promedio: ${d.promedio} kW
-- Nivel: ${d.nivel}]`;
+- Nivel: ${d.nivel}
+
+Consumo por dispositivo ahora mismo:
+${dispositivosStr}]`;
   } catch {
     return "";
   }
