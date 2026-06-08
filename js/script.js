@@ -30,6 +30,30 @@ const HORAS = [
 ];
 const HORAS_NUM = [6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21];
 
+async function verificarReset() {
+  const ref = doc(db, "datos-energia", "actual");
+  const snap = await getDoc(ref);
+  if (!snap.exists()) return;
+
+  const d = snap.data();
+  if (!d.ultimaActualizacion) return;
+
+  const ultimaFecha = d.ultimaActualizacion.split("T")[0];
+  const hoyFecha = new Date().toISOString().split("T")[0];
+
+  if (ultimaFecha !== hoyFecha) {
+    await setDoc(ref, {
+      ...d,
+      consumoHoy: 0,
+      graficaHoy: Array(16).fill(null),
+      costo: 0,
+      co2: 0,
+      promedio: 0,
+      ultimaActualizacion: new Date().toISOString(),
+    });
+  }
+}
+
 async function actualizarFirestore() {
   const ref = doc(db, "datos-energia", "actual");
   const snap = await getDoc(ref);
@@ -138,7 +162,10 @@ const hamburguesa = document.getElementById("hamburguesa");
 const menu = document.querySelector(".menu");
 
 hamburguesa.addEventListener("click", () => {
-    menu.classList.toggle("abierto");
+  menu.classList.toggle("abierto");
 });
-actualizarFirestore();
-setInterval(actualizarFirestore, 5000);
+
+verificarReset().then(() => {
+  actualizarFirestore();
+  setInterval(actualizarFirestore, 5000);
+});
