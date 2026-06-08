@@ -308,6 +308,22 @@ body {
     display: none;
 }
 
+
+@keyframes floatIn {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.lista-dispositivos .disp-card {
+    animation-delay: 0.25s;
+}
+
 @media (max-width: 768px) {
 
     body {
