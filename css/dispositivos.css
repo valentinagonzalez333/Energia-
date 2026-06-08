@@ -303,3 +303,113 @@ body {
 .boton-tema:hover {
     transform: translateY(-2px);
 }
+
+.hamburguesa {
+    display: none;
+}
+@media (max-width: 768px) {
+
+    body {
+        min-height: 100vh;
+        height: auto;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+    .contenedor {
+        flex-direction: column;
+    }
+
+    .hamburguesa {
+        display: block;
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 1000;
+        background: white;
+        border: none;
+        border-radius: 10px;
+        padding: 12px;
+        cursor: pointer;
+    }
+
+    .hamburguesa i {
+        color: #ff8c00;
+        font-size: 22px;
+    }
+
+    .menu {
+        position: fixed;
+        left: -100px;
+        top: 0;
+        margin: 0;
+        height: 100vh;
+        z-index: 999;
+        transition: left .3s ease;
+    }
+
+    .menu.abierto {
+        left: 0;
+    }
+
+    .menu nav {
+        height: 100vh;
+        border-radius: 0;
+    }
+
+    .principal img {
+        width: 70px;
+    }
+
+    .principal h1 {
+        font-size: 1.2rem;
+    }
+
+    .contenido-dispositivos {
+        padding: 15px;
+        height: auto;
+        overflow-y: visible;
+    }
+
+    .lista-dispositivos {
+        grid-template-columns: 1fr 1fr; 
+        gap: 10px;
+    }
+
+    .disp-card {
+        padding: 12px;
+        gap: 10px;
+    }
+
+    .disp-icono {
+        font-size: 22px;
+    }
+
+    .disp-nombre {
+        font-size: 13px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 80px;
+    }
+
+    .disp-consumo {
+        font-size: 13px;
+    }
+
+    .boton-tema {
+        bottom: 85px;
+        right: 15px;
+        width: 42px;
+        height: 42px;
+        font-size: 18px;
+    }
+
+    .boton-ia {
+        width: 55px;
+        height: 55px;
+        font-size: 20px;
+        bottom: 15px;
+        right: 15px;
+    }
+}

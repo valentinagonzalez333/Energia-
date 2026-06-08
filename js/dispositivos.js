@@ -51,3 +51,9 @@ onSnapshot(doc(db, "datos-energia", "actual"), (snapshot) => {
     `${d.potencia} kW en uso`;
   renderDispositivos(d.potencia);
 });
+const hamburguesa = document.getElementById("hamburguesa");
+const menu = document.querySelector(".menu");
+
+hamburguesa.addEventListener("click", () => {
+    menu.classList.toggle("abierto");
+});

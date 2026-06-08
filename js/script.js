@@ -146,6 +146,7 @@ onSnapshot(doc(db, "datos-energia", "actual"), (snapshot) => {
       },
       options: {
         responsive: true,
+        maintainAspectRatio: false,
         plugins: { legend: { labels: { color: "#131212" } } },
         scales: {
           x: { ticks: { color: "white" } },

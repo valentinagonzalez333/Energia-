@@ -374,12 +374,14 @@ body {
         width: 100%;
         margin-right: 0;
         padding: 15px;
+        overflow: hidden;
     }
 
     #grafica {
-        width: 100% !important;
-        height: 250px !important;
-    }
+    width: 100% !important;
+    height: 220px !important;
+    max-width: 100% !important;
+}
 
     .infos {
         width: 100%;
