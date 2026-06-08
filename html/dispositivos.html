@@ -1,25 +1,26 @@
 <!doctype html>
 <html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dispositivos</title>
+    <link rel="icon" type="image/x-icon" href="../img/Lodo-voltix.png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/dispositivos.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dispositivos</title>
-  <link rel="icon" type="image/x-icon" href="../img/Lodo-voltix.png" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap"
-    rel="stylesheet" />
-  <link rel="stylesheet" href="../css/dispositivos.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-</head>
-
-<body>
-  <script>
-    const _t = localStorage.getItem("voltix-tema");
-    if (_t === "dark") document.body.classList.add("dark");
-  </script>
-
-  <div class="contenedor">
+  <body>
+    <script>
+      const _t = localStorage.getItem("voltix-tema");
+      if (_t === "dark") document.body.classList.add("dark");
+    </script>
     <div class="principal">
       <img src="../img/Lodo-voltix.png" alt="" />
       <h1>Voltix</h1>
@@ -27,48 +28,57 @@
     <button class="hamburguesa" id="hamburguesa">
       <i class="fa-solid fa-bars"></i>
     </button>
-    <div class="menu">
-      <nav>
-        <ul>
-          <li>
-            <a href="panel.html"><i class="fa-solid fa-chart-line"></i></a>
-          </li>
-          <li>
-            <a href="monitoreo.html"><i class="fa-solid fa-bolt"></i></a>
-          </li>
-          <li>
-            <a href="estadisticas.html"><i class="fa-solid fa-chart-pie"></i></a>
-          </li>
-          <li>
-            <a href="dispositivos.html" class="activo"><i class="fa-solid fa-plug"></i></a>
-          </li>
-          <li>
-            <a href="usuarios.html"><i class="fa-solid fa-users"></i></a>
-          </li>
-          <li>
-            <a href="alertas.html"><i class="fa-solid fa-triangle-exclamation"></i></a>
-          </li>
-          <li>
-            <a href="login.html" onclick="cerrarSesion()"><i class="fa-solid fa-right-from-bracket"></i></a>
-          </li>
-        </ul>
-      </nav>
-    </div>
 
-    <div class="contenido-dispositivos">
-      <div class="disp-header">
-        <h2>Dispositivos del hogar</h2>
-        <span id="consumo-total-disp" class="badge-disp">Cargando...</span>
+    <div class="contenedor">
+      <div class="menu">
+        <nav>
+          <ul>
+            <li>
+              <a href="panel.html"><i class="fa-solid fa-chart-line"></i></a>
+            </li>
+            <li>
+              <a href="monitoreo.html"><i class="fa-solid fa-bolt"></i></a>
+            </li>
+            <li>
+              <a href="estadisticas.html"
+                ><i class="fa-solid fa-chart-pie"></i
+              ></a>
+            </li>
+            <li>
+              <a href="dispositivos.html" class="activo"
+                ><i class="fa-solid fa-plug"></i
+              ></a>
+            </li>
+            <li>
+              <a href="usuarios.html"><i class="fa-solid fa-users"></i></a>
+            </li>
+            <li>
+              <a href="alertas.html"
+                ><i class="fa-solid fa-triangle-exclamation"></i
+              ></a>
+            </li>
+            <li>
+              <a href="login.html" onclick="cerrarSesion()"
+                ><i class="fa-solid fa-right-from-bracket"></i
+              ></a>
+            </li>
+          </ul>
+        </nav>
       </div>
-      <div id="lista-dispositivos" class="lista-dispositivos"></div>
-    </div>
-  </div>
-  <button class="boton-tema" id="boton-tema" title="Cambiar tema">🌙</button>
-  <script type="module" src="../js/tema.js"></script>
-</body>
-<button class="boton-ia"><i class="fa-solid fa-robot"></i></button>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script type="module" src="../js/dispositivos.js"></script>
-<script type="module" src="../js/chat-ai.js"></script>
 
+      <div class="contenido-dispositivos">
+        <div class="disp-header">
+          <h2>Dispositivos del hogar</h2>
+          <span id="consumo-total-disp" class="badge-disp">Cargando...</span>
+        </div>
+        <div id="lista-dispositivos" class="lista-dispositivos"></div>
+      </div>
+    </div>
+    <button class="boton-tema" id="boton-tema" title="Cambiar tema">🌙</button>
+    <script type="module" src="../js/tema.js"></script>
+  </body>
+  <button class="boton-ia"><i class="fa-solid fa-robot"></i></button>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script type="module" src="../js/dispositivos.js"></script>
+  <script type="module" src="../js/chat-ai.js"></script>
 </html>
