@@ -307,6 +307,7 @@ body {
 .hamburguesa {
     display: none;
 }
+
 @media (max-width: 768px) {
 
     body {
@@ -340,7 +341,7 @@ body {
 
     .menu {
         position: fixed;
-        left: -100px;
+        left: -120px;
         top: 0;
         margin: 0;
         height: 100vh;
@@ -367,12 +368,13 @@ body {
 
     .contenido-dispositivos {
         padding: 15px;
+        padding-top: 70px;
         height: auto;
         overflow-y: visible;
     }
 
     .lista-dispositivos {
-        grid-template-columns: 1fr 1fr; 
+        grid-template-columns: 1fr 1fr;
         gap: 10px;
     }
 
